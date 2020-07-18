@@ -197,6 +197,9 @@ html {
     html {
         font-size: 14px;
     }
+    .span-br {
+        font-size: 0rem;
+    }
 }
 body:before {
     position: fixed;
