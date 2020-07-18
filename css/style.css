@@ -227,7 +227,7 @@ h1 {
     }
 }
 h2 {
-    font-size: 3rem;
+    font-size: 3.1rem;
     margin: 4rem 0 2rem;
 }
 h3 {
@@ -241,6 +241,7 @@ h4 {
 @media screen and (max-width:960px) {
     h4 {
         font-size: 1.5rem;
+        margin: 0 0 1rem;
     }
 }
 h5 {
