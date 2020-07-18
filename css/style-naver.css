@@ -21,7 +21,6 @@ pre {
 }
 a {
     background-color: transparent;
-    text-decoration: none;
 }
 abbr[title] {
     border-bottom: none;
@@ -169,7 +168,7 @@ template {
     background: #2DB400;
 }
 ::selection {
-    background: #2DB400;
+    background: #afff95;
 }
 body,
 html {
@@ -264,7 +263,7 @@ ul > li:before {
     left: 0;
     display: inline-block;
     content: "•";
-    color: #443731;
+    color: #2DB400;
 }
 .container {
     width: 100%;
@@ -272,7 +271,7 @@ ul > li:before {
     margin: auto;
 }
 .period-mark {
-    color: #443731;
+    color: #2DB400;
 }
 .big-paragraph {
     font-size: 2rem;
