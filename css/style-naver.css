@@ -160,6 +160,14 @@ template {
     font-weight: 100;
     src: local("Spoqa Han Sans Thin"),url(SpoqaHanSansThin.e4533171.woff2) format("woff2"),url(SpoqaHanSansThin.66fd60cb.woff) format("woff"),url(SpoqaHanSansThin.2a8662e2.ttf) format("truetype");
 }
+@font-face {
+    font-family: NanumSquareRoundR;
+    src: local("※"), url(NanumSquareRoundR.ttf) format("truetype");
+}
+@font-face {
+    font-family: NanumSquare_acR;
+    src: local("※"), url(NanumSquare_acR.ttf) format("truetype");
+}
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -174,7 +182,9 @@ body,
 html {
     font-size: 16px;
     word-break: keep-all;
-    font-family: Spoqa Han Sans,sans-serif;
+    font-family: NanumSquare_acR,sans-serif;
+    /* font-family: NanumSquareRoundR,sans-serif; */
+    /* font-family: Spoqa Han Sans,sans-serif; */
     letter-spacing: -.3px;
     color: #222;
     padding-bottom: 2rem;
