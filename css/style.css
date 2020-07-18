@@ -21,6 +21,7 @@ pre {
 }
 a {
     background-color: transparent;
+    text-decoration: none;
 }
 abbr[title] {
     border-bottom: none;
@@ -229,9 +230,12 @@ h2 {
     font-size: 3rem;
     margin: 4rem 0 2rem;
 }
-h3,
-h4 {
+h3 {
     font-size: 2rem;
+    margin: 0 0 1rem;
+}
+h4 {
+    font-size: 1.7rem;
     margin: 0 0 1rem;
 }
 @media screen and (max-width:960px) {
@@ -283,7 +287,7 @@ ul > li:before {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 3rem 0;
+    padding: 2rem 0;
     border-bottom: 1px solid #eee;
 }
 .row-left {
@@ -321,8 +325,15 @@ ul > li:before {
 }
 .project {
     padding: 1.5rem 0;
+    width: 100%;
 }
 .project:first-child {
+    padding-top: 0;
+}
+.skills {
+    padding: 1.5rem 0;
+}
+.skills:first-child {
     padding-top: 0;
 }
 .time {
