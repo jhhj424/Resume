@@ -192,13 +192,19 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.span-br2 {
+    font-size: 1px;
+}
 @media screen and (max-width:960px) {
     body,
     html {
         font-size: 14px;
     }
-    .span-br {
+    .span-br1 {
         font-size: 0rem;
+    }
+    .span-br2 {
+        padding-right: 30px;
     }
 }
 body:before {
