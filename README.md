@@ -19,7 +19,7 @@
 
 📋Notion
 
-[😀RESUME[이력서]](https://www.notion.so/RESUME-7b75f185935b407f84b5f35bc21a03ac)
+[RESUME[이력서]](https://www.notion.so/RESUME-7b75f185935b407f84b5f35bc21a03ac)
 ---
 
 📧Email. **jhhj424@naver.com**
