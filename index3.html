@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>안녕하세요, 개발하는 신지호 입니다 👋</title><style>
+	/* webkit printing magic: print all background colors */
+	html {
+		-webkit-print-color-adjust: exact;
+	}
+	* {
+		box-sizing: border-box;
+		-webkit-print-color-adjust: exact;
+	}
+	
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	@media only screen {
+		body {
+			margin: 2em auto;
+			max-width: 900px;
+			color: rgb(55, 53, 47);
+		}
+	}
+	
+	body {
+		line-height: 1.5;
+		white-space: pre-wrap;
+	}
+	
+	a,
+	a.visited {
+		color: inherit;
+		text-decoration: underline;
+	}
+	
+	.pdf-relative-link-path {
+		font-size: 80%;
+		color: #444;
+	}
+	
+	h1,
+	h2,
+	h3 {
+		letter-spacing: -0.01em;
+		line-height: 1.2;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	
+	.page-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-top: 0;
+		margin-bottom: 0.75em;
+	}
+	
+	h1 {
+		font-size: 1.875rem;
+		margin-top: 1.875rem;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+		margin-top: 1.5rem;
+	}
+	
+	h3 {
+		font-size: 1.25rem;
+		margin-top: 1.25rem;
+	}
+	
+	.source {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		padding: 1.5em;
+		word-break: break-all;
+	}
+	
+	.callout {
+		border-radius: 3px;
+		padding: 1rem;
+	}
+	
+	figure {
+		margin: 1.25em 0;
+		page-break-inside: avoid;
+	}
+	
+	figcaption {
+		opacity: 0.5;
+		font-size: 85%;
+		margin-top: 0.5em;
+	}
+	
+	mark {
+		background-color: transparent;
+	}
+	
+	.indented {
+		padding-left: 1.5em;
+	}
+	
+	hr {
+		background: transparent;
+		display: block;
+		width: 100%;
+		height: 1px;
+		visibility: visible;
+		border: none;
+		border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+	}
+	
+	img {
+		max-width: 100%;
+	}
+	
+	@media only print {
+		img {
+			max-height: 100vh;
+			object-fit: contain;
+		}
+	}
+	
+	@page {
+		margin: 1in;
+	}
+	
+	.collection-content {
+		font-size: 0.875rem;
+	}
+	
+	.column-list {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.column {
+		padding: 0 1em;
+	}
+	
+	.column:first-child {
+		padding-left: 0;
+	}
+	
+	.column:last-child {
+		padding-right: 0;
+	}
+	
+	.table_of_contents-item {
+		display: block;
+		font-size: 0.875rem;
+		line-height: 1.3;
+		padding: 0.125rem;
+	}
+	
+	.table_of_contents-indent-1 {
+		margin-left: 1.5rem;
+	}
+	
+	.table_of_contents-indent-2 {
+		margin-left: 3rem;
+	}
+	
+	.table_of_contents-indent-3 {
+		margin-left: 4.5rem;
+	}
+	
+	.table_of_contents-link {
+		text-decoration: none;
+		opacity: 0.7;
+		border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+	}
+	
+	table,
+	th,
+	td {
+		border: 1px solid rgba(55, 53, 47, 0.09);
+		border-collapse: collapse;
+	}
+	
+	table {
+		border-left: none;
+		border-right: none;
+	}
+	
+	th,
+	td {
+		font-weight: normal;
+		padding: 0.25em 0.5em;
+		line-height: 1.5;
+		min-height: 1.5em;
+		text-align: left;
+	}
+	
+	th {
+		color: rgba(55, 53, 47, 0.6);
+	}
+	
+	ol,
+	ul {
+		margin: 0;
+		margin-block-start: 0.6em;
+		margin-block-end: 0.6em;
+	}
+	
+	li > ol:first-child,
+	li > ul:first-child {
+		margin-block-start: 0.6em;
+	}
+	
+	ul > li {
+		list-style: disc;
+	}
+	
+	ul.to-do-list {
+		text-indent: -1.7em;
+	}
+	
+	ul.to-do-list > li {
+		list-style: none;
+	}
+	
+	.to-do-children-checked {
+		text-decoration: line-through;
+		opacity: 0.375;
+	}
+	
+	ul.toggle > li {
+		list-style: none;
+	}
+	
+	ul {
+		padding-inline-start: 1.7em;
+	}
+	
+	ul > li {
+		padding-left: 0.1em;
+	}
+	
+	ol {
+		padding-inline-start: 1.6em;
+	}
+	
+	ol > li {
+		padding-left: 0.2em;
+	}
+	
+	.mono ol {
+		padding-inline-start: 2em;
+	}
+	
+	.mono ol > li {
+		text-indent: -0.4em;
+	}
+	
+	.toggle {
+		padding-inline-start: 0em;
+		list-style-type: none;
+	}
+	
+	/* Indent toggle children */
+	.toggle > li > details {
+		padding-left: 1.7em;
+	}
+	
+	.toggle > li > details > summary {
+		margin-left: -1.1em;
+	}
+	
+	.selected-value {
+		display: inline-block;
+		padding: 0 0.5em;
+		background: rgba(206, 205, 202, 0.5);
+		border-radius: 3px;
+		margin-right: 0.5em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		white-space: nowrap;
+	}
+	
+	.collection-title {
+		display: inline-block;
+		margin-right: 1em;
+	}
+	
+	time {
+		opacity: 0.5;
+	}
+	
+	.icon {
+		display: inline-block;
+		max-width: 1.2em;
+		max-height: 1.2em;
+		text-decoration: none;
+		vertical-align: text-bottom;
+		margin-right: 0.5em;
+	}
+	
+	img.icon {
+		border-radius: 3px;
+	}
+	
+	.user-icon {
+		width: 1.5em;
+		height: 1.5em;
+		border-radius: 100%;
+		margin-right: 0.5rem;
+	}
+	
+	.user-icon-inner {
+		font-size: 0.8em;
+	}
+	
+	.text-icon {
+		border: 1px solid #000;
+		text-align: center;
+	}
+	
+	.page-cover-image {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+		height: 30vh;
+	}
+	
+	.page-header-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	
+	.page-header-icon-with-cover {
+		margin-top: -0.72em;
+		margin-left: 0.07em;
+	}
+	
+	.page-header-icon img {
+		border-radius: 3px;
+	}
+	
+	.link-to-page {
+		margin: 1em 0;
+		padding: 0;
+		border: none;
+		font-weight: 500;
+	}
+	
+	p > .user {
+		opacity: 0.5;
+	}
+	
+	td > .user,
+	td > time {
+		white-space: nowrap;
+	}
+	
+	input[type="checkbox"] {
+		transform: scale(1.5);
+		margin-right: 0.6em;
+		vertical-align: middle;
+	}
+	
+	p {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	
+	.image {
+		border: none;
+		margin: 1.5em 0;
+		padding: 0;
+		border-radius: 0;
+		text-align: center;
+	}
+	
+	.code,
+	code {
+		background: rgba(135, 131, 120, 0.15);
+		border-radius: 3px;
+		padding: 0.2em 0.4em;
+		border-radius: 3px;
+		font-size: 85%;
+		tab-size: 2;
+	}
+	
+	code {
+		color: #eb5757;
+	}
+	
+	.code {
+		padding: 1.5em 1em;
+	}
+	
+	.code-wrap {
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+	
+	.code > code {
+		background: none;
+		padding: 0;
+		font-size: 100%;
+		color: inherit;
+	}
+	
+	blockquote {
+		font-size: 1.25em;
+		margin: 1em 0;
+		padding-left: 1em;
+		border-left: 3px solid rgb(55, 53, 47);
+	}
+	
+	.bookmark {
+		text-decoration: none;
+		max-height: 8em;
+		padding: 0;
+		display: flex;
+		width: 100%;
+		align-items: stretch;
+	}
+	
+	.bookmark-title {
+		font-size: 0.85em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		height: 1.75em;
+		white-space: nowrap;
+	}
+	
+	.bookmark-text {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.bookmark-info {
+		flex: 4 1 180px;
+		padding: 12px 14px 14px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.bookmark-image {
+		width: 33%;
+		flex: 1 1 180px;
+		display: block;
+		position: relative;
+		object-fit: cover;
+		border-radius: 1px;
+	}
+	
+	.bookmark-description {
+		color: rgba(55, 53, 47, 0.6);
+		font-size: 0.75em;
+		overflow: hidden;
+		max-height: 4.5em;
+		word-break: break-word;
+	}
+	
+	.bookmark-href {
+		font-size: 0.75em;
+		margin-top: 0.25em;
+	}
+	
+	.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+	.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+	.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+	.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+	.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+	
+	.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+	
+	.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+	
+	.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+	
+	.highlight-default {
+	}
+	.highlight-gray {
+		color: rgb(155,154,151);
+	}
+	.highlight-brown {
+		color: rgb(100,71,58);
+	}
+	.highlight-orange {
+		color: rgb(217,115,13);
+	}
+	.highlight-yellow {
+		color: rgb(223,171,1);
+	}
+	.highlight-teal {
+		color: rgb(15,123,108);
+	}
+	.highlight-blue {
+		color: rgb(11,110,153);
+	}
+	.highlight-purple {
+		color: rgb(105,64,165);
+	}
+	.highlight-pink {
+		color: rgb(173,26,114);
+	}
+	.highlight-red {
+		color: rgb(224,62,62);
+	}
+	.highlight-gray_background {
+		background: rgb(235,236,237);
+	}
+	.highlight-brown_background {
+		background: rgb(233,229,227);
+	}
+	.highlight-orange_background {
+		background: rgb(250,235,221);
+	}
+	.highlight-yellow_background {
+		background: rgb(251,243,219);
+	}
+	.highlight-teal_background {
+		background: rgb(221,237,234);
+	}
+	.highlight-blue_background {
+		background: rgb(221,235,241);
+	}
+	.highlight-purple_background {
+		background: rgb(234,228,242);
+	}
+	.highlight-pink_background {
+		background: rgb(244,223,235);
+	}
+	.highlight-red_background {
+		background: rgb(251,228,228);
+	}
+	.block-color-default {
+		color: inherit;
+		fill: inherit;
+	}
+	.block-color-gray {
+		color: rgba(55, 53, 47, 0.6);
+		fill: rgba(55, 53, 47, 0.6);
+	}
+	.block-color-brown {
+		color: rgb(100,71,58);
+		fill: rgb(100,71,58);
+	}
+	.block-color-orange {
+		color: rgb(217,115,13);
+		fill: rgb(217,115,13);
+	}
+	.block-color-yellow {
+		color: rgb(223,171,1);
+		fill: rgb(223,171,1);
+	}
+	.block-color-teal {
+		color: rgb(15,123,108);
+		fill: rgb(15,123,108);
+	}
+	.block-color-blue {
+		color: rgb(11,110,153);
+		fill: rgb(11,110,153);
+	}
+	.block-color-purple {
+		color: rgb(105,64,165);
+		fill: rgb(105,64,165);
+	}
+	.block-color-pink {
+		color: rgb(173,26,114);
+		fill: rgb(173,26,114);
+	}
+	.block-color-red {
+		color: rgb(224,62,62);
+		fill: rgb(224,62,62);
+	}
+	.block-color-gray_background {
+		background: rgb(235,236,237);
+	}
+	.block-color-brown_background {
+		background: rgb(233,229,227);
+	}
+	.block-color-orange_background {
+		background: rgb(250,235,221);
+	}
+	.block-color-yellow_background {
+		background: rgb(251,243,219);
+	}
+	.block-color-teal_background {
+		background: rgb(221,237,234);
+	}
+	.block-color-blue_background {
+		background: rgb(221,235,241);
+	}
+	.block-color-purple_background {
+		background: rgb(234,228,242);
+	}
+	.block-color-pink_background {
+		background: rgb(244,223,235);
+	}
+	.block-color-red_background {
+		background: rgb(251,228,228);
+	}
+	.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+	.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+	.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+	.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+	.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+	.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+	.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+	.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+	.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+	.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+	
+	.checkbox {
+		display: inline-flex;
+		vertical-align: text-bottom;
+		width: 16;
+		height: 16;
+		background-size: 16px;
+		margin-left: 2px;
+		margin-right: 5px;
+	}
+	
+	.checkbox-on {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+	}
+	
+	.checkbox-off {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+	}
+		
+	</style></head><body><article id="3cce848b-daa1-4995-9a70-7406f4dd0117" class="page sans"><header><h1 class="page-title">안녕하세요, 개발하는 신지호 입니다 👋</h1></header><div class="page-body"><p id="8d2892e3-e5fd-44c1-9d3f-2d07a4173b00" class="">
+	</p><blockquote id="d4554999-a1de-41f1-b484-f118d5858814" class="">저는 이런 사람입니다.</blockquote><p id="51e2b42b-7579-409f-9f41-2acd9422e2f0" class="">매일 매일 <strong>작은 한걸음을 실천</strong>하고 있습니다.</p><p id="ff014def-b226-4416-b17c-ceda772ed781" class=""><strong>철저한 테스트 코드</strong>를 바탕으로 코드를 작성하려고 노력합니다.</p><p id="293ff975-f4e4-438e-9627-7c8e581d5e63" class="">개발자 뿐만 아닌 <strong>모든사람이 이해할 수 있는 코드</strong>를 작성하기 위해 고민합니다.</p><p id="f650d304-a2e7-4516-ae08-12475a548242" class="">
+	</p><blockquote id="bdd1d21c-0ce9-4ba9-9cb5-727542c40cbd" class="">저는 이런 팀과 일 하고 싶습니다.</blockquote><p id="77803493-28fe-4d2f-a13e-5e86c9225a2f" class=""><strong>커뮤니케이션을 중요시 하는 팀에서</strong> 고민을 나누고 소통하고 싶습니다.</p><p id="63e06c11-539f-4348-86ca-1c5c4e225107" class="">당연하게 <strong>코드 리뷰, 피드백을 주고 받고 이를 바탕으로 업무를 진행 할 수 있는 팀</strong>에 합류 하고 싶습니다.</p><p id="f00abff1-9ea7-40ac-bc7c-4549e9402946" class=""><strong>함께 자랄 수 있는 팀의 일원</strong>이 되고 싶습니다.</p><p id="9886b4f3-8131-417f-8430-1358fccb2e62" style="font-size: smaller;">( * 함께 자라다 : 협력하고 학습해서 성장하다. )</p><p id="3c66d3eb-30a8-4577-bce7-6c3472981253" class="">
+	</p><h2 id="a464d2f6-1212-4633-a498-0185e9eb3605" class="block-color-orange_background">Contact.</h2><div id="64499942-3015-4a0a-972f-a15766be74cb" class="column-list"><div id="26dcbbc8-c678-4a5f-ba77-6130c5d78825" style="width:15.625%" class="column"><p id="db0537f8-83f2-41be-9fff-0e84ed8a8f40" class="">📞 <strong>Phone</strong></p></div><div id="5c38106c-d1d8-47c5-82dd-b528337567b6" style="width:34.375%" class="column"><p id="d96c710e-11d9-41d9-b2ae-8d11369e451d" class="">010-3412-0161</p></div><div id="8bcee7f4-5632-4143-873d-79eadc932394" style="width:12.5%" class="column"><p id="b2d4b75e-be4d-4a15-b999-90c6e9787bb6" class="">📧 <strong>Email</strong></p></div><div id="7cf2dc1e-4810-4a7f-a50f-f1f6ce79b4ac" style="width:37.5%" class="column"><p id="89b1572d-d025-4a24-8398-24f03a7416a9" class="">jhhj424@naver.com</p><p id="701d93fd-cb2d-4ca7-b653-626727fd26cf" class="">
+	</p></div></div><div id="913d9ec7-a8e2-49fa-a60c-d6766c8d1ed8" class="column-list"><div id="e41b4805-d97c-4af9-96fe-08db6b17eaf5" style="width:15.625%" class="column"><p id="048e8530-2bf2-47b7-9db4-db4e686a07d1" class="">🔎 <strong>Github</strong></p></div><div id="c76012b4-a918-4ebc-a68f-e3e0c481201b" style="width:34.375%" class="column"><p id="8f352bba-155b-4d28-bd8b-61f7a8cfcf6a" class=""><a href="https://github.com/jhhj424">https://github.com/jhhj424</a></p></div><div id="3ee2082d-3668-4411-bc27-0fe44f5a2aee" style="width:12.5%" class="column"><p id="961d2dfa-bfd4-4fe4-9e2e-f8551b2882f2" class="">📚 <strong>Blog</strong></p></div><div id="4e2948ee-f6df-4641-b9df-e26385d04c4b" style="width:37.5%" class="column"><p id="91782dc5-e9f3-4f17-88d6-b547dcdf2257" class=""><a href="https://jhhj424.tistory.com/">https://jhhj424.tistory.com</a></p><p id="ac41aee6-857d-462a-aeea-cfe77eb8ae1b" class="">
+	</p></div></div><h2 id="0d62b9db-a51f-4c3c-aa19-06d03ad47e8c" class="block-color-blue_background">Skills</h2><div id="0f8dfadf-8a53-49d3-9f1e-764df1341c8b" class="column-list"><div id="0e7390a5-2003-41ac-9abd-73c8fb70e171" style="width:18.749999999999996%" class="column"><p id="ec7b5554-cf02-4402-b885-09d80feb0d8e" class=""></p><br>🖥️ Backend</p><p id="18e78362-845c-4d98-9439-87ff77910c55" class="">
+	</p><p id="3ef779da-2017-445a-8a29-26583aa101e3" class="">
+	</p><p id="d09f196d-9c59-4f50-a74a-7d4905db6f7c" class="">⚙️ DevOps</p><p id="5ac63af7-6533-4e8f-9d98-9ed75439d717" class="">
+	</p><p id="80057527-11fe-4393-8243-5042bff81d5c" class="">
+	</p><p id="b0bc7f3b-c83e-4fb0-82e2-70b06522bbe5" class="">💻 Frontend</p></div><div id="1c4f02fd-3bf3-41f0-88f2-77f0f17a7329" style="width:81.25000000000003%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ef59d03e-5a79-4089-b8d9-7599f18b5b45"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">- Java 8,11
+	- Spring Boot, Spring MVC, Spring Data JPA
+	- JPA, MyBatis
+	- Junit5, Mockito, RestAssured
+	- Gradle, Maven</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7ff7695b-88f0-4a94-826e-65878663c9ed"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">- MySQL, MariaDB, Oracle
+	- TravisCI, Github Actions
+	- AWS (EC2, Elastic Beanstalk, Code Deploy, RDS, S3 ...)
+	- Nginx, Tomcat
+	- Linux, Ubuntu</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="adbc6d44-dabc-4e00-bc9a-eb391e510406"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">- ES6
+	- Npm, Angular6, Typescript
+	- Html, Css, Javascript, jQuery</div></figure><p id="9d5cc6b3-d42e-460b-8084-3cfacb96f052" class="">
+	</p></div></div><h2 id="1dd7e3bb-42ab-4f15-8b1f-2f016ad65648" class="block-color-purple_background">Work Experience.</h2><div id="bb232ead-f77e-4e8a-a370-ba8ab7c374e4" class="column-list"><div id="243b4242-b1dd-4af3-b316-0f9ee0361f10" style="width:25%" class="column"><h3 id="b4a84e98-690c-4cbe-b660-d8b112214acf" class="">TRIA(트리아)</h3><p id="e9e33451-b521-492e-842a-3fd135c1dea6" class=""><a href="http://triagroup.co.kr/">http://triagroup.co.kr/</a></p><p id="1ee5cfe1-5087-47dc-88c1-a335d9cddf7d" class="">웹 개발자 2019.08 ~</p></div><div id="718e1f5b-c669-4b11-8d25-629341099d8c" style="width:75%" class="column"><ul id="b7086709-0a03-4e6e-91ca-ed46fd008de3" class="bulleted-list"><li>신한금융투자 <code>CRM</code> 프로젝트 참여</li></ul><ul id="87ab30e3-0acb-4b8b-bc8c-030df017c466" class="bulleted-list"><li>사내 솔루션 파워빌더 → Web 전환 프로젝트 참여</li></ul><ul id="d5d0df22-d64a-491a-86ca-1b22d1e5518c" class="bulleted-list"><li>CHUBB 에이스손해보험 <code>IFRS17 사업비</code> 프로젝트 참여</li></ul><ul id="f0f62b85-eaf0-442e-b732-131bc40147b3" class="bulleted-list"><li>Spring Boot, Gradle, MyBatis, Oracle, MsSQL(Azure DW),
+	Angular, ProFrame 5 C, WebSquare5 환경에서의 개발 경험</li></ul><p id="92372cf1-4d62-4a0f-a09f-cee518b27dc8" class="">
+	</p></div></div><h2 id="4f7a4dd9-404c-49f0-b290-6725265bf0ee" class="block-color-teal_background">Projects.</h2><div id="fa7b880d-643b-4380-bee2-dd92def1aca7" class="column-list"><div id="b327ca11-436b-4d01-9758-5904027fab5b" style="width:43.75%" class="column"><h3 id="9d3e5bd7-1f45-47d7-8487-1389ded6947c" class="block-color-teal">신한금융투자증권 CRM 프로젝트</h3><p id="bd5cc062-6d0f-4c1a-9a42-e595b9f1686d" class="">2020년 9월 9일 ~ 2021년 2월 17일(예정)</p><figure id="4eb60a2c-28f6-43f6-b398-4e53c911147c" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled.png"><img style="width:240px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled.png"/></a></figure></div><div id="6666caee-614e-4e82-b603-873044dc953b" style="width:56.25%" class="column"><h3 id="564ad498-99e2-4c1e-94cc-b9e474deab7f" class="">Description</h3><p id="c228e621-ddf3-469e-8a3a-ef4e846b9a8e" class=""><code>신한금융투자증권</code> CRM(고객 관계 관리) 프로젝트</p><p id="6e592970-05b4-4c65-8dbd-4b1deb49f008" class="">증권사 고객들의 정보를 관리하여 영업 인력의 영업 활동을 지원하고, 고객 서비스를 질적으로 향상시키기 위한 시스템</p><h3 id="5a762937-103f-4ac5-a75a-4c68a14943bc" class="">What did I do</h3><ul id="1204678c-cc8d-4035-abb1-5137f34d1aff" class="bulleted-list"><li>기존의 CRM 시스템을 Web 으로 전환 작업</li></ul><ul id="faf56afd-15b5-42a8-ab9f-630b555e4473" class="bulleted-list"><li>CRM 파트 중 `고객관리(개인)`, `성과관리(개인)` 에 대한 요구사항 분석 및 개발</li></ul><ul id="ba0bbba4-9601-456c-8811-c7648cabec07" class="bulleted-list"><li>ProFrame 을 사용하여 BackEnd 개발</li></ul><ul id="8043936f-6422-4425-b0f3-79c0fe22f8c7" class="bulleted-list"><li>WebSquare, OzReport 를 사용하여 FrontEnd 개발</li></ul><h3 id="599d5d66-1146-45f4-9024-2a464e026695" class="">Tech Stack</h3><p id="268d8681-99c4-43b3-abf4-771f6e56331f" class="">WebSquare5, ProFrame, OzReport, Oracle</p><p id="48fa3ac0-8d6f-4d5f-98cc-60bf689f14f2" class="">
+	</p></div></div><hr id="d96fdb2e-5715-4f28-867d-fffd885ae0c6"/><div id="6734dad8-209e-4e70-9c82-37a02d9bc7c9" class="column-list"><div id="2478b95a-3f7a-4453-b45f-d2468bb90619" style="width:43.75%" class="column"><h3 id="c3148e92-cda0-4b09-af7e-b845de5e7884" class="block-color-teal">TRIA <a href="http://www.triagroup.co.kr/doc/sb2_7.php#space">Amain for OPEX</a> 개발</h3><p id="547c1dea-5985-4e7b-a336-4caa49412e54" class="">2020년 8월 3일 ~ 2020년 9월 4일</p><figure id="cb9993b7-c14e-4b75-8b1f-c5d305fec911" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%201.png"><img style="width:240px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%201.png"/></a></figure><p id="bd6ac4d7-c2c5-447b-95bd-5c39ca1c46d3" class="">
+	</p></div><div id="9d29fa05-5c73-43a9-992f-2c3cb1cb92d1" style="width:56.25%" class="column"><h3 id="8c82d2cd-9f80-4a20-9a67-048a4e15e320" class="">Description</h3><p id="97d59ca4-a14b-4131-bf2a-217715f6add7" class=""><code>(주)트리아의 솔루션</code>중 하나로, IFRS17 기준에 따른 국내 보험사 사업비 배분 업무에서 사용되는 배치 애플리케이션 설정 웹 애플리케이션</p><p id="8548630a-a6c9-451f-9146-4d9cb3f586dc" class="">관리자(사용자)가 배치 애플리케이션에서 사용되는 데이터와 설정등을 조작하고 관리할 수 있음</p><h3 id="680f7a9f-83f9-491c-95bf-12315d4fb5bd" class="">What did I do</h3><ul id="e35227e5-18f8-4834-9a87-770f60d2df04" class="bulleted-list"><li>본사 기존 파워빌더(PowerBuilder) 솔루션의 사업비 배분의 원장(Ledger)설정, 차원(Dimension)설정 파트 분석</li></ul><ul id="cc337ad0-d30f-487a-9778-7944595cdc22" class="bulleted-list"><li>Spring Boot, JSP 기반의 관리자용 웹 애플리케이션 개발 - (사업비 배분의 원장(Ledger)관련 설정, 차원(Dimension)관련 설정)</li></ul><h3 id="72dc7957-cae7-4e9f-adf6-486ca3afea68" class="">Tech Stack</h3><p id="e277bf6e-cea1-4854-ba1c-47b40f6be392" class="">Spring Boot, Gradle, MyBatis, Oracle, JSP, jQuery</p><p id="dd6c78da-6eb3-438d-a67f-6001018a1dcc" class="">
+	</p></div></div><hr id="c9582058-bb54-4a0e-b755-5af820554259"/><div id="b4da8612-6eef-4b7e-9fbc-c7f50f51383b" class="column-list"><div id="cd342af8-9607-405a-943f-f8f9017980e4" style="width:43.75%" class="column"><h3 id="c2026128-8cc3-4cb5-b4fc-1426981a91ef" class="block-color-teal">TRIA <a href="http://www.triagroup.co.kr/doc/sb2_3.php#space">Amain for LRM</a> 개발</h3><p id="19143185-307c-4c3a-9e93-70727218e685" class="">2020년 5월 11일 ~ 2020년 7월 31일</p><figure id="ae7d5903-efbb-4bbb-8825-6eaf2faae637" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%201.png"><img style="width:240px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%201.png"/></a></figure><p id="27fc26db-7eda-4b5c-b042-60fa297fe607" class="">
+	</p></div><div id="38be8c87-8efb-4c75-9762-5f383beaafec" style="width:56.25%" class="column"><h3 id="9f6d82c1-18ed-4531-937b-910ba5a9d602" class="">Description</h3><p id="f2b96fca-b833-493b-8284-d3e3c2d432fa" class=""><code>(주)트리아의 솔루션</code>중 하나로, 국내 증권사의 리스크 관리 회계 업무에서 사용되는 배치 애플리케이션 설정 웹 애플리케이션</p><p id="0847019e-7f87-4415-9440-80a293f66120" class="">관리자(사용자)가 배치 애플리케이션에서 사용되는 데이터와 설정등을 조작하고 관리할 수 있음</p><h3 id="a2ac070e-dd14-458e-828b-786c1a19b0dd" class="">What did I do</h3><ul id="d0d661ce-64a9-4d11-9ffd-072727188678" class="bulleted-list"><li>Spring Boot, JSP 기반의 관리자용 웹 애플리케이션 개발 - (보고서, 기본설정, 프로세스 설정, 관리자 메뉴)</li></ul><ul id="f7c9f0dd-59a6-4bc4-b11d-278a311a6120" class="bulleted-list"><li>본사의 솔루션 개발, 외부 프로젝트 개발에서 공통으로 사용할 라이브러리 개발 - (Spring Boot, jQWidgets 기반)</li></ul><h3 id="5ca8b6e1-3818-481b-9662-597dce79c2e0" class="">Tech Stack</h3><p id="c6b0d683-64cf-4c3d-8712-5e515261073a" class="">Spring Boot, Gradle, MyBatis, Oracle, JSP, jQuery</p><p id="403175f6-e790-4f37-b1bd-0195f8cc7352" class="">
+	</p></div></div><hr id="98b157a9-cf52-423f-a10f-8b694a9e2c62"/><div id="11e576e6-e867-43e1-a0fd-6a207bc56a23" class="column-list"><div id="4e815664-84b3-462c-b366-adfc05c10c71" style="width:43.75%" class="column"><h3 id="1c4ec457-99a2-4c28-9bc5-a824f6e19b04" class="block-color-teal"><a href="https://www.chubb.com/kr-kr/">CHUBB 에이스 손해보험</a>
+	IFRS17 사업비 프로젝트
+	웹, 배치 개발</h3><p id="b71dd1cd-2be4-4cb5-9f63-aa6d9de33632" class="">2019년 6월 1일 ~ 2020년 4월 30일</p><figure id="3f8e0d77-24ee-4182-823a-bebf8bf6fffb" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%202.png"><img style="width:323px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%202.png"/></a></figure><p id="31bfef87-6d79-4962-91d3-7df30f88bbd0" class="">
+	</p></div><div id="b2564d9b-3332-4089-9c6c-0484620937ca" style="width:56.25%" class="column"><h3 id="cd85dd19-4d6f-486a-ac27-935a50013fba" class="">Description</h3><p id="f93a747b-4281-48d3-be75-94254714aadf" class=""><code>CHUBB 에이스 보험사</code>에 적용한 사업비 배분 프로젝트</p><ul id="9b1d09f7-7902-449d-a979-96400a5645da" class="bulleted-list"><li>IFRS17 기준에 따른 사업비 배분 업무를 진행</li></ul><p id="60f59d21-d7ee-4a2f-bf77-474a6cc940bb" class="">국내 에이스 손해보험사의 사업비 데이터를 글로벌 데이터와 IFRS17 기준에 따라 배분하는 작업을 진행</p><p id="a7a09809-91df-4bef-ad59-8cb39a112840" class="">배치 애플리케이션과 관리자용 웹 애플리케이션 개발 진행</p><ul id="44e13be2-abbc-4b9c-b57c-828cc94f4b82" class="bulleted-list"><li>IFRS17: 2017 년 5 월 국제 회계 표준위원회 (International Accounting Standards Board)에서 발행 한 국제 재무보고 표준</li></ul><h3 id="f565946e-8ed9-4517-a08c-fb9d6c856359" class="">What did I do</h3><ul id="2b8bdf23-3d3b-4ea7-b11a-c58a952a2fbc" class="bulleted-list"><li>초기 데이터 입수(ETL) 배치 애플리케이션 개발</li></ul><ul id="0c184fb0-341d-46c4-be72-7dd03e1f61d4" class="bulleted-list"><li>Spring Boot, Angular 6 기반의 관리자용 웹 애플리케이션 개발 - (초기 데이터 관리, 배치 애플리케이션 설정 관리, 보고서 등)</li></ul><h3 id="a9c6cf0f-efb6-46cf-aa56-aa00014df13d" class="">Tech Stack</h3><p id="7ae9af7a-d245-43c0-aeb6-ae9addd08260" class="">Spring Boot, Spring Batch, Gradle, MyBatis, MsSQL(Azure DW), Angular, ES6, Npm</p><p id="56714e74-eed5-4750-a6ce-ac9653f6b913" class="">
+	</p></div></div><hr id="f5d09bab-88a1-438d-bbf5-fbf74cd12593"/><div id="f3bc0624-8fb5-4636-b10d-68be6a5ed497" class="column-list"><div id="cd15de0b-0d70-4195-97ad-f0c62ec08f2b" style="width:43.75%" class="column"><h3 id="72256f81-4441-4563-bd80-5c527cdecc1e" class="block-color-teal"><a href="https://github.com/jhhj424/QuickCoduck">퀵코덕(QuickCoduck)</a> ← click</h3><p id="992c6208-f4c3-43ef-a88e-109e065d2918" class="">2018년 12월 31일 ~ 2019년 1월 25일</p><figure id="8aed262f-c022-47b6-b546-ffdfa5070846" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%203.png"><img style="width:1887px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%203.png"/></a></figure><p id="850ed422-1556-4354-b237-a6cad52dd0f0" class="">
+	</p></div><div id="ee1a7db8-6f99-4162-91b8-0fb3089a25aa" style="width:56.25%" class="column"><h3 id="bd70b346-6968-440b-9ca0-6f8ef8739032" class="">Description</h3><p id="7cbaa5d6-bd40-4c77-8c64-9869705db879" class="">Spring Framework로 구현 된 개발자를위한 아웃소싱 (매칭 시스템) 및 코드 커뮤니티 웹 사이트</p><h3 id="4f6541cf-3483-4c60-bb98-57167f59cfe8" class="">What did I do</h3><ul id="d38d9cba-9463-42cc-8c6a-45eb7fb3f902" class="bulleted-list"><li>팀 프로젝트 팀장 역할</li></ul><ul id="c3c8cd7a-0b72-44c4-8197-8c1215b18cbb" class="bulleted-list"><li>프로젝트 버전 관리(github)</li></ul><ul id="788f5b5c-dc9f-4b35-a303-4b8a441704b3" class="bulleted-list"><li>의견 조율 및 팀원(4人)별 능력에 맞춘 개발 파트 지시</li></ul><ul id="2da44100-bbb1-4e0f-a168-c7c1680f3f87" class="bulleted-list"><li>DB설계</li></ul><ul id="2b84958a-c683-41ce-ae38-ad13d3b2856c" class="bulleted-list"><li>오픈소스/프로젝트 게시판 개발</li></ul><ul id="72bacbec-4e36-4a79-8df7-a3fc59663ad5" class="bulleted-list"><li>개발자&amp;클라이언트 별점 평가 기능 개발</li></ul><ul id="7218e5b9-b377-4403-b910-89667b222e6a" class="bulleted-list"><li>개발자&amp;클라이언트 프로젝트 진행 기능 개발</li></ul><ul id="e572c51b-1dfb-4d34-a279-751e508ec4f0" class="bulleted-list"><li>인재(개발자) 매칭 기능 개발</li></ul><h3 id="57ab4996-3101-4bdf-9399-e9e1986476b4" class="">Tech Stack</h3><p id="2bbc3c7d-30ad-4a56-ba13-16488c60d201" class="">Spring Framework , Maven , Java 8 , MariaDB , Mybatis , SQL , JSP , Javascript , jQuery , Ajax , Html , CSS , Sitemesh , W3</p><p id="cb7fcfe5-a676-44ad-874c-90abf043c833" class="">
+	</p></div></div><hr id="f5f5768a-f50d-4a34-84a3-e8e04764322e"/><div id="bb216245-a60d-4ca4-b29b-f656fb7d0cb2" class="column-list"><div id="195416d5-3c60-4a66-ae3c-07094876949f" style="width:43.75%" class="column"><h3 id="66ea0586-f04c-498d-be6b-6d36e9ce1f6b" class="block-color-teal"><a href="https://github.com/jhhj424/MVC_Model2_Project">Travel maker</a> ← click</h3><p id="9bc0bee8-2ee8-4c04-af3b-622953c1d6c0" class="">2018년 10월 15일 ~ 2018년 10월 26일</p><figure id="1ae1d46f-30e7-4b86-a353-fb9107fe16e0" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%204.png"><img style="width:1888px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A9%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20%F0%9F%91%8B%204eb60a2c28f643f6b3984e53c911147c/Untitled%204.png"/></a></figure><p id="22973422-9403-4646-9262-331741fdfe4a" class="">
+	</p></div><div id="7ce76329-5bfa-4029-b189-927ebefde101" style="width:56.25%" class="column"><h3 id="c3d0fc21-742e-48ea-8194-53294aafa1b9" class="">Description</h3><p id="fd608b8c-a29a-45b1-a90b-894e864b53f3" class="">MVC Model 2로 구현 된 여행 커뮤니티 웹 사이트</p><h3 id="3c9568aa-19e4-49e6-91be-2b9d5ba1d4d5" class="">What did I do</h3><ul id="056bca58-a076-4800-b538-8a3fae545c72" class="bulleted-list"><li>개인 프로젝트로, 기획 설계 개발 전부 경험</li></ul><ul id="4ef7e1ef-86a6-40cd-bf0e-7a9cde5984a1" class="bulleted-list"><li>MVC Model2 패턴을 적용하여 프로젝트 설계,개발</li></ul><ul id="ded8e8fb-b5fe-4e12-b5e1-cc7475aa765a" class="bulleted-list"><li>회원가입, 로그인 기능 구현</li></ul><ul id="c1a953be-d7ea-4908-b5db-9cd9bd769a1a" class="bulleted-list"><li>페이징 게시판 구현</li></ul><ul id="75ce1874-a318-4fe9-b62f-28b48c8c5033" class="bulleted-list"><li>동행 신청 및 승인 기능 구현</li></ul><h3 id="43673772-01e1-449c-bfd6-5d6eb2786d8a" class="">Tech Stack</h3><p id="1adb01fd-03b9-48b5-b0da-e2f6dea33ea5" class="">Java 8 , MVC Model2 Design Pattern , MariaDB , Mybatis , JSP , Javascript , jQuery , Ajax , Html , CSS , Sitemesh , W3</p><p id="9c1b5962-8e8d-4ac7-a094-ab80062e3ffc" class="">
+	</p></div></div><h2 id="26491f99-dd78-4af5-b848-684124ed3386" class="block-color-yellow_background">Education.</h2><div id="f1515d2b-33b6-43fc-97c7-5a0bdfaef856" class="column-list"><div id="8a1464c6-d968-4e27-adfb-dbf074e555cc" style="width:43.75%" class="column"><h3 id="663eb9a8-f1ee-40be-95eb-8e1d792dc500" class="">우아한테크캠프pro</h3><p id="6898a882-7c1c-47b0-9834-9b169f3f5469" class="">자바 백엔드 경력 개발자 대상 교육</p><p id="971c857d-549d-4890-a28c-b87a0802f5f6" class="">2020년 11월 ~ 2021년 1월</p><p id="18f3ebf1-4d2f-4009-bb00-d76f85f4dd19" style="font-size: smaller;"> → 우수 수료생</p><p id="3b167cda-5b94-4b30-8e6a-d945579905dd" class="">
+	</p></div><div id="74c03b27-ccbf-4fb1-b102-7bd776013e03" style="width:56.25%" class="column"><p id="7803f6e7-2963-4e81-b793-74f0e1a519a6" class="">NextStep 에서 진행하는 <code>우아한 테크 캠프 pro</code> 교육에 참여하여 진행하는 모든 과제를 완료하였습니다.</p><p id="ed35b683-6f34-49b5-b85e-de33af6c4175" class="">효과적인 프로그래밍 학습 방법에 대한 고민을 통해 성장을 경험했습니다.</p><p id="c9bac041-536f-4ca6-9f91-b3556311a8d8" class="">클린코드의 중요성을 인지하고 좋은 코드란 무엇일까? 에 대한 고민을 바탕으로 프로그래밍 하였습니다.</p><p id="53dcbd8d-435e-401d-8b0b-be1848fd72b5" class="">TDD, 레거시 코드 리팩터링을 연습하며 테스트코드의 중요성을 깨닫고, 여러 종류의 테스트 코드를 작성하는 경험을 했습니다.</p><p id="b22b8687-0eda-4f72-91ee-62188fdccc8a" class="">
+	</p><p id="a65589cd-68a3-4006-9d7f-d5b3763777d0" class=""><a href="https://jhhj424.tistory.com/category/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EC%BA%A0%ED%94%84pro"><strong>매주 미션 정리 및 회고</strong></a><strong> ← link click</strong></p><p id="a1bf9746-2cd5-4521-a088-86a36c270b0f" class="">
+	</p></div></div><hr id="0ce3a7a4-07d4-4e4b-b21b-438965857839"/><div id="eb7bbaca-9fe1-4784-aa21-31e7c3502e95" class="column-list"><div id="9528cf7f-842c-4922-a77c-f16effb82048" style="width:43.75%" class="column"><h3 id="85c79fb5-7628-4ca5-a965-80c15ffaa127" class="">구디아카데미</h3><p id="e9aad31d-e460-46ea-a6e1-3458aefdfc8d" class="">Spring기반 빅데이터 전문가 양성과정</p><p id="3b01f737-bde9-4c84-a5bd-3907411fac36" class="">2018년 7월 ~ 2019년 1월</p></div><div id="2d05cde0-1a1a-4b9b-b822-dda67078c07a" style="width:56.25%" class="column"><p id="ee71b20c-ed71-4382-a947-976bbcade7ac" class="">IT 전문학원에서 6개월간 공부하며 웹 애플리케이션 개발 능력을 쌓았습니다.</p><p id="dc0a3d6b-fbad-419c-a11a-e6c3cc3b6e1f" class="">1000시간 교육과정 중 단 한 번의 지각, 결석 없이 가장 우수한 성적으로 이수하였습니다.</p><p id="178fed43-1a51-4b6e-a6e7-c574c92b3e8e" class="">최종프로젝트에서 리더 역할로 팀을 이끌어 최우수팀으로 선정되었습니다.</p><p id="66649596-555a-49cb-a30e-066cb73f000f" class="">
+	</p></div></div><h2 id="24667175-7d2d-4d69-80ef-fb47af1102b8" class="block-color-red_background">Other Experience</h2><div id="f1f2f74c-87f6-4d5e-bba5-9144227e81d8" class="column-list"><div id="adfa83fd-2f03-4d76-bbdd-c6987677c70a" style="width:43.75%" class="column"><h3 id="cc65f46e-26d2-4dea-b2bd-f9fa55c6c3ce" class="">개발하는 지토</h3><p id="7c972c53-2d4e-4bde-b205-136e93195691" class="">2019년 12월 09일 ~ </p><p id="39574c89-8197-41f5-9818-8141b76da3f4" class="">
+	</p></div><div id="8dc29613-f0dd-45a9-ab66-0e21ca2ed4d5" style="width:56.25%" class="column"><p id="ef0eaace-1ebf-412e-9057-871615186155" class="">&#x27;개발하는지토&#x27; 라는 이름의 개인 블로그를 운영중입니다.</p><p id="142c8e14-781e-4016-ae24-4ce94199ed50" class="">사용하거나 관심 있는 기술, 새롭게 배우게 된 내용 등을 글로 작성하여 공유합니다.</p><p id="0a1bfe38-2ad3-4028-b315-e4e418f4fab3" class="">발전해나가는 저에 대한 기록입니다.</p><p id="ec07e1c1-7ee9-44f4-8b84-f513a9455dcc" class="">
+	</p><p id="da0e4930-5dd3-4478-8b94-90543d0b3401" class=""><strong><a href="https://jhhj424.tistory.com/">블로그 주소</a></strong><strong> ← link click</strong></p><p id="293aacb3-c744-4efa-89da-f13921d8bae4" class="">
+	</p></div></div><hr id="4c4f9242-b346-4dbe-adfb-26bd6df3999f"/><div id="3ded93d4-33c0-4301-8359-5d58ecdd6889" class="column-list"><div id="d67acf11-6102-49b3-b1b0-fd94b793988b" style="width:43.75%" class="column"><h3 id="78f09e89-df15-41e8-82b1-481aba02e4a2" class="">Java Mentoring</h3><p id="b5af18b1-9533-4c59-b922-204796c18ac8" class="">2020년 6월 16일 ~ 2020년 7월 7일</p></div><div id="a7315d57-713f-4f17-a73d-40741d5b8c0f" style="width:56.25%" class="column"><p id="30e871ee-2208-4c51-b4b7-0e6c875ac7fd" class="">IT 전문학원에서 공부 중인 예비 개발자분들을 위한 JAVA 멘토링을 진행하였습니다.</p><p id="082c7c37-77c7-4057-8f5c-8e5920730e8b" class="">
+	</p><p id="014d9432-f030-42e2-97a8-1353ece41fa1" class=""><strong><a href="https://jhhj424.tistory.com/13">2회차 멘토링 후기</a></strong><strong> ← link click</strong></p><p id="e2b8e3b1-2b75-47c0-96c4-76ba45082bf2" class=""><strong><a href="https://jhhj424.tistory.com/15">3회차 멘토링 후기</a></strong><strong> ← link click</strong></p><p id="6edd0c35-cb9e-4297-8607-211e8ac6e620" class=""><strong><a href="https://jhhj424.tistory.com/17">4회차 멘토링 후기</a></strong><strong> ← link click</strong></p><p id="c36e3fd6-b83f-497c-9adb-e84097ba566c" class="">
+	</p></div></div><h2 id="8d85f369-4eab-469e-b7da-28585ff9518d" class="block-color-brown_background">Licence</h2><div id="30e3a8a3-7985-4011-99dc-a4493352fcdd" class="column-list"><div id="9085823f-c71c-4b97-9c9a-c6ab970d0879" style="width:50%" class="column"><h3 id="48aafd5c-97c6-4ce4-9a99-d50d2ef5bec1" class="">SQLD(SQL 개발자)</h3><p id="c043b80a-03ef-4847-b0db-5cac95aed7f9" class="">한국데이터베이스진흥센터</p><p id="e76ba0f2-d2f4-4c6f-a2e6-0493a91f5a08" class="">2018.12.28</p></div><div id="c58c22df-e73f-49fb-8e49-a0abf7ae3790" style="width:49.99999999999999%" class="column"><h3 id="58020612-4a19-41e6-b53d-31b5ff875f57" class="">정보처리산업기사</h3><p id="145ef381-6c3a-47dd-b139-33c9d86db308" class="">한국산업인력공단</p><p id="de348c47-42ae-4f32-86bf-fd2b6709ff4c" class="">2019.05.22</p><p id="376ac934-a937-49b2-9829-e1154bb49bf4" class="">
+	</p></div></div><hr id="cf0f707c-1ca4-4b69-8e1a-5330c02cde51"/><p id="fbb6a5e2-a0f0-46a2-b621-c322ca247d79" class="">
+	</p></div></article></body></html>
