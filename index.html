@@ -1,670 +1,666 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>신지호 | Java 백엔드 개발자</title><style>
-	/* webkit printing magic: print all background colors */
-	html {
-		-webkit-print-color-adjust: exact;
-	}
-	* {
-		box-sizing: border-box;
-		-webkit-print-color-adjust: exact;
-	}
-	
-	html,
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>신지호</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
 	body {
-		margin: 0;
-		padding: 0;
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
 	}
-	@media only screen {
-		body {
-			margin: 2em auto;
-			max-width: 900px;
-			color: rgb(55, 53, 47);
-		}
-	}
-	
-	body {
-		line-height: 1.5;
-		white-space: pre-wrap;
-	}
-	
-	a,
-	a.visited {
-		color: inherit;
-		text-decoration: underline;
-	}
-	
-	.pdf-relative-link-path {
-		font-size: 80%;
-		color: #444;
-	}
-	
-	h1,
-	h2,
-	h3 {
-		letter-spacing: -0.01em;
-		line-height: 1.2;
-		font-weight: 600;
-		margin-bottom: 0;
-	}
-	
-	.page-title {
-		font-size: 2.5rem;
-		font-weight: 700;
-		margin-top: 0;
-		margin-bottom: 0.75em;
-	}
-	
-	h1 {
-		font-size: 1.875rem;
-		margin-top: 1.875rem;
-	}
-	
-	h2 {
-		font-size: 1.5rem;
-		margin-top: 1.5rem;
-	}
-	
-	h3 {
-		font-size: 1.25rem;
-		margin-top: 1.25rem;
-	}
-	
-	.source {
-		border: 1px solid #ddd;
-		border-radius: 3px;
-		padding: 1.5em;
-		word-break: break-all;
-	}
-	
-	.callout {
-		border-radius: 3px;
-		padding: 1rem;
-	}
-	
-	figure {
-		margin: 1.25em 0;
-		page-break-inside: avoid;
-	}
-	
-	figcaption {
-		opacity: 0.5;
-		font-size: 85%;
-		margin-top: 0.5em;
-	}
-	
-	mark {
-		background-color: transparent;
-	}
-	
-	.indented {
-		padding-left: 1.5em;
-	}
-	
-	hr {
-		background: transparent;
-		display: block;
-		width: 100%;
-		height: 1px;
-		visibility: visible;
-		border: none;
-		border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-	}
-	
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
 	img {
-		max-width: 100%;
-	}
-	
-	@media only print {
-		img {
-			max-height: 100vh;
-			object-fit: contain;
-		}
-	}
-	
-	@page {
-		margin: 1in;
-	}
-	
-	.collection-content {
-		font-size: 0.875rem;
-	}
-	
-	.column-list {
-		display: flex;
-		justify-content: space-between;
-	}
-	
-	.column {
-		padding: 0 1em;
-	}
-	
-	.column:first-child {
-		padding-left: 0;
-	}
-	
-	.column:last-child {
-		padding-right: 0;
-	}
-	
-	.table_of_contents-item {
-		display: block;
-		font-size: 0.875rem;
-		line-height: 1.3;
-		padding: 0.125rem;
-	}
-	
-	.table_of_contents-indent-1 {
-		margin-left: 1.5rem;
-	}
-	
-	.table_of_contents-indent-2 {
-		margin-left: 3rem;
-	}
-	
-	.table_of_contents-indent-3 {
-		margin-left: 4.5rem;
-	}
-	
-	.table_of_contents-link {
-		text-decoration: none;
-		opacity: 0.7;
-		border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-	}
-	
-	table,
-	th,
-	td {
-		border: 1px solid rgba(55, 53, 47, 0.09);
-		border-collapse: collapse;
-	}
-	
-	table {
-		border-left: none;
-		border-right: none;
-	}
-	
-	th,
-	td {
-		font-weight: normal;
-		padding: 0.25em 0.5em;
-		line-height: 1.5;
-		min-height: 1.5em;
-		text-align: left;
-	}
-	
-	th {
-		color: rgba(55, 53, 47, 0.6);
-	}
-	
-	ol,
-	ul {
-		margin: 0;
-		margin-block-start: 0.6em;
-		margin-block-end: 0.6em;
-	}
-	
-	li > ol:first-child,
-	li > ul:first-child {
-		margin-block-start: 0.6em;
-	}
-	
-	ul > li {
-		list-style: disc;
-	}
-	
-	ul.to-do-list {
-		text-indent: -1.7em;
-	}
-	
-	ul.to-do-list > li {
-		list-style: none;
-	}
-	
-	.to-do-children-checked {
-		text-decoration: line-through;
-		opacity: 0.375;
-	}
-	
-	ul.toggle > li {
-		list-style: none;
-	}
-	
-	ul {
-		padding-inline-start: 1.7em;
-	}
-	
-	ul > li {
-		padding-left: 0.1em;
-	}
-	
-	ol {
-		padding-inline-start: 1.6em;
-	}
-	
-	ol > li {
-		padding-left: 0.2em;
-	}
-	
-	.mono ol {
-		padding-inline-start: 2em;
-	}
-	
-	.mono ol > li {
-		text-indent: -0.4em;
-	}
-	
-	.toggle {
-		padding-inline-start: 0em;
-		list-style-type: none;
-	}
-	
-	/* Indent toggle children */
-	.toggle > li > details {
-		padding-left: 1.7em;
-	}
-	
-	.toggle > li > details > summary {
-		margin-left: -1.1em;
-	}
-	
-	.selected-value {
-		display: inline-block;
-		padding: 0 0.5em;
-		background: rgba(206, 205, 202, 0.5);
-		border-radius: 3px;
-		margin-right: 0.5em;
-		margin-top: 0.3em;
-		margin-bottom: 0.3em;
-		white-space: nowrap;
-	}
-	
-	.collection-title {
-		display: inline-block;
-		margin-right: 1em;
-	}
-	
-	time {
-		opacity: 0.5;
-	}
-	
-	.icon {
-		display: inline-block;
-		max-width: 1.2em;
-		max-height: 1.2em;
-		text-decoration: none;
-		vertical-align: text-bottom;
-		margin-right: 0.5em;
-	}
-	
-	img.icon {
-		border-radius: 3px;
-	}
-	
-	.user-icon {
-		width: 1.5em;
-		height: 1.5em;
-		border-radius: 100%;
-		margin-right: 0.5rem;
-	}
-	
-	.user-icon-inner {
-		font-size: 0.8em;
-	}
-	
-	.text-icon {
-		border: 1px solid #000;
-		text-align: center;
-	}
-	
-	.page-cover-image {
-		display: block;
-		object-fit: cover;
-		width: 100%;
-		height: 30vh;
-	}
-	
-	.page-header-icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-	
-	.page-header-icon-with-cover {
-		margin-top: -0.72em;
-		margin-left: 0.07em;
-	}
-	
-	.page-header-icon img {
-		border-radius: 3px;
-	}
-	
-	.link-to-page {
-		margin: 1em 0;
-		padding: 0;
-		border: none;
-		font-weight: 500;
-	}
-	
-	p > .user {
-		opacity: 0.5;
-	}
-	
-	td > .user,
-	td > time {
-		white-space: nowrap;
-	}
-	
-	input[type="checkbox"] {
-		transform: scale(1.5);
-		margin-right: 0.6em;
-		vertical-align: middle;
-	}
-	
-	p {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
-	}
-	
-	.image {
-		border: none;
-		margin: 1.5em 0;
-		padding: 0;
-		border-radius: 0;
-		text-align: center;
-	}
-	
-	.code,
-	code {
-		background: rgba(135, 131, 120, 0.15);
-		border-radius: 3px;
-		padding: 0.2em 0.4em;
-		border-radius: 3px;
-		font-size: 85%;
-		tab-size: 2;
-	}
-	
-	code {
-		color: #eb5757;
-	}
-	
-	.code {
-		padding: 1.5em 1em;
-	}
-	
-	.code-wrap {
-		white-space: pre-wrap;
-		word-break: break-all;
-	}
-	
-	.code > code {
-		background: none;
-		padding: 0;
-		font-size: 100%;
-		color: inherit;
-	}
-	
-	blockquote {
-		font-size: 1.25em;
-		margin: 1em 0;
-		padding-left: 1em;
-		border-left: 3px solid rgb(55, 53, 47);
-	}
-	
-	.bookmark {
-		text-decoration: none;
-		max-height: 8em;
-		padding: 0;
-		display: flex;
-		width: 100%;
-		align-items: stretch;
-	}
-	
-	.bookmark-title {
-		font-size: 0.85em;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		height: 1.75em;
-		white-space: nowrap;
-	}
-	
-	.bookmark-text {
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.bookmark-info {
-		flex: 4 1 180px;
-		padding: 12px 14px 14px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-	
-	.bookmark-image {
-		width: 33%;
-		flex: 1 1 180px;
-		display: block;
-		position: relative;
-		object-fit: cover;
-		border-radius: 1px;
-	}
-	
-	.bookmark-description {
-		color: rgba(55, 53, 47, 0.6);
-		font-size: 0.75em;
-		overflow: hidden;
-		max-height: 4.5em;
-		word-break: break-word;
-	}
-	
-	.bookmark-href {
-		font-size: 0.75em;
-		margin-top: 0.25em;
-	}
-	
-	.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-	.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-	.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
-	.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-	.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-	
-	.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-	
-	.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-	
-	.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-	
-	.highlight-default {
-	}
-	.highlight-gray {
-		color: rgb(155,154,151);
-	}
-	.highlight-brown {
-		color: rgb(100,71,58);
-	}
-	.highlight-orange {
-		color: rgb(217,115,13);
-	}
-	.highlight-yellow {
-		color: rgb(223,171,1);
-	}
-	.highlight-teal {
-		color: rgb(15,123,108);
-	}
-	.highlight-blue {
-		color: rgb(11,110,153);
-	}
-	.highlight-purple {
-		color: rgb(105,64,165);
-	}
-	.highlight-pink {
-		color: rgb(173,26,114);
-	}
-	.highlight-red {
-		color: rgb(224,62,62);
-	}
-	.highlight-gray_background {
-		background: rgb(235,236,237);
-	}
-	.highlight-brown_background {
-		background: rgb(233,229,227);
-	}
-	.highlight-orange_background {
-		background: rgb(250,235,221);
-	}
-	.highlight-yellow_background {
-		background: rgb(251,243,219);
-	}
-	.highlight-teal_background {
-		background: rgb(221,237,234);
-	}
-	.highlight-blue_background {
-		background: rgb(221,235,241);
-	}
-	.highlight-purple_background {
-		background: rgb(234,228,242);
-	}
-	.highlight-pink_background {
-		background: rgb(244,223,235);
-	}
-	.highlight-red_background {
-		background: rgb(251,228,228);
-	}
-	.block-color-default {
-		color: inherit;
-		fill: inherit;
-	}
-	.block-color-gray {
-		color: rgba(55, 53, 47, 0.6);
-		fill: rgba(55, 53, 47, 0.6);
-	}
-	.block-color-brown {
-		color: rgb(100,71,58);
-		fill: rgb(100,71,58);
-	}
-	.block-color-orange {
-		color: rgb(217,115,13);
-		fill: rgb(217,115,13);
-	}
-	.block-color-yellow {
-		color: rgb(223,171,1);
-		fill: rgb(223,171,1);
-	}
-	.block-color-teal {
-		color: rgb(15,123,108);
-		fill: rgb(15,123,108);
-	}
-	.block-color-blue {
-		color: rgb(11,110,153);
-		fill: rgb(11,110,153);
-	}
-	.block-color-purple {
-		color: rgb(105,64,165);
-		fill: rgb(105,64,165);
-	}
-	.block-color-pink {
-		color: rgb(173,26,114);
-		fill: rgb(173,26,114);
-	}
-	.block-color-red {
-		color: rgb(224,62,62);
-		fill: rgb(224,62,62);
-	}
-	.block-color-gray_background {
-		background: rgb(235,236,237);
-	}
-	.block-color-brown_background {
-		background: rgb(233,229,227);
-	}
-	.block-color-orange_background {
-		background: rgb(250,235,221);
-	}
-	.block-color-yellow_background {
-		background: rgb(251,243,219);
-	}
-	.block-color-teal_background {
-		background: rgb(221,237,234);
-	}
-	.block-color-blue_background {
-		background: rgb(221,235,241);
-	}
-	.block-color-purple_background {
-		background: rgb(234,228,242);
-	}
-	.block-color-pink_background {
-		background: rgb(244,223,235);
-	}
-	.block-color-red_background {
-		background: rgb(251,228,228);
-	}
-	.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-	.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-	.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-	.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-	.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-	.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-	.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-	.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-	.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-	.select-value-color-red { background-color: rgba(255,0,26,0.2); }
-	
-	.checkbox {
-		display: inline-flex;
-		vertical-align: text-bottom;
-		width: 16;
-		height: 16;
-		background-size: 16px;
-		margin-left: 2px;
-		margin-right: 5px;
-	}
-	
-	.checkbox-on {
-		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-	}
-	
-	.checkbox-off {
-		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-	}
-		
-</style></head><body><article id="b1c9da34-8c8d-4718-b2a2-b2e7a2ade9e4" class="page sans"><header><h1 class="page-title">안녕하세요, 개발하는 신지호 입니다 👋</h1></header><div class="page-body"><h2 id="415d762e-82a9-4b83-bbb4-68659267f0a7" class="block-color-orange_background">Contact.</h2><div id="986d7f09-afb4-4595-90ff-94afa2ccc313" class="column-list"><div id="559aec99-76b3-4c25-953f-65afcef865f2" style="width:15.625%" class="column"><p id="022eacfd-9e54-4128-8ad7-fc5963ad339d" class="">📞 <strong>Phone</strong></p></div><div id="96377412-8bee-4d62-9236-345b704a4cbb" style="width:34.375%" class="column"><p id="9e426f5f-7688-4d49-92a6-ae1c2e90d6fb" class="">010-3412-0161</p></div><div id="591edc1c-7dc3-41bb-9c2b-36854ed72068" style="width:12.5%" class="column"><p id="ea5a1c79-a2df-4ea5-a1b8-68bb4ec97300" class="">📧 <strong>Email</strong></p></div><div id="c1100ffc-f2f3-4b34-a17c-c14704c25ccb" style="width:37.5%" class="column"><p id="e3cc9575-9131-4b97-b4ac-8d7f50d5c227" class="">jhhj424@naver.com</p><p id="9fa99073-335f-48ef-b0de-8c5aee8a01cd" class="">
-</p></div></div><div id="fb064b0b-0abd-4cb3-bcfb-57bc899cf93b" class="column-list"><div id="4708e570-24c7-44ef-9917-6ded78fca260" style="width:15.625%" class="column"><p id="e5181135-3177-42c5-ac9b-c2288b989e16" class="">🔎 <strong>Github</strong></p><p id="084db73c-3cf9-4132-bd05-28b77f54dbdc" class="">
-</p></div><div id="3e533218-2ecf-4ebf-bdb2-e4b846ce12ca" style="width:34.375%" class="column"><p id="a39f91ed-edd7-4523-a0a4-cdf6ecf0f0d6" class=""><a href="https://github.com/jhhj424">https://github.com/jhhj424</a></p><p id="a77901c0-2f26-4d78-b5d7-a7e066326caf" class="">
-</p></div><div id="b290e6f9-5773-4473-9526-15aa7592cfb9" style="width:12.5%" class="column"><p id="5663cb47-7c1d-4508-9218-77079163ff08" class="">📚 <strong>Blog</strong></p></div><div id="8a7cec94-7d0f-42c0-b68f-57bfde658875" style="width:37.5%" class="column"><p id="2a5bc54f-30e6-4ea1-959c-171d58e04219" class=""><a href="https://jhhj424.tistory.com/">https://jhhj424.tistory.com</a></p><p id="0148ea08-89ad-4d79-923b-f23779aca68f" class="">
-</p></div></div><h2 id="7925a592-60c5-4001-b7a3-18f86cd9b661" class="block-color-teal_background">Introduce.</h2><p id="1be5f99c-b745-45dd-9b5f-a0cacc4bd0b6" class="">약 2년간, Java와 Javascript를 기반으로 프론트, 백엔드 전체를 경험하며 웹 애플리케이션을 구축/개발해왔으며, 크게 보험사의 사업비 배분 프로젝트, 증권사의 CRM 프로젝트 경험이 있습니다.
-학생 때부터 Java, Spring을 기반으로 개발을 진행해왔고, 보험사에서 진행했던 프로젝트에서 Java 8, Spring Boot 를 이용해 개발한 경험이 있습니다.</p><p id="a14dc25c-06a7-40cf-9ecc-6847d6fb997b" class=""></p>
-<p id="18e3766b-5122-4cc7-829c-49643c83174f" class="">좋은 백엔드 엔지니어가 되기 위해 꾸준히 학습하는 것을 좋아하고, 테스트가 쉽고 가독성이 좋은 코드를 작성하기 위해 노력하고 있습니다. 대용량 트래픽과 성능 튜닝에 관심이 있으며 이러한 경험을 더 쌓아나가고 싶습니다.</p>
-<p id="82dcc0f7-3c53-45e8-848b-077da1bb4c83" class=""></p><p id="458b34c2-beb4-4677-b96b-a5cabc9e13e6" class="">최근에는 Spring, JPA(ORM) 와 같은 기술들을 어떻게 잘 사용하여 사용자 서비스를 만들 수 있는지에 큰 관심이 있으며 꾸준한 학습을 통해 기술 역량과 경험을 만들어가고 있습니다.</p><p id="46474ce7-1cf3-49dd-b5a0-3b81ccb62733" class="">
-</p><h2 id="f0cc4ab8-ea7c-41c2-9a52-4de3b96472f2" class="block-color-blue_background">Skills</h2><div id="ac311948-a243-46d7-b8fb-1537d31d1e89" class="column-list"><div id="c34fea65-afe3-4cfc-b342-fdd6bbb6bb31" style="width:18.75%" class="column"><p id="ace26f99-9581-403b-999a-f265014d6281" class="">
-</p><p id="28c367f0-f03f-4450-bab2-cbf37dc5826c" class=""><strong>🖥️ Backend</strong></p><p id="1ebdda52-9fc8-4fdc-b52b-b5838ec1fff3" class="">
-</p><p id="6e4418db-53c2-4d10-b6a8-8160d769292c" class="">
-</p><p id="494e245a-c4d6-425a-b39b-1a32b8c92ff8" class=""><strong>⚙️ DevOps</strong></p><p id="5cc6d92b-d289-4d34-a79d-b0d697c14b1b" class="">
-</p><p id="986316d1-a854-45dc-92ed-6c1eeabe10e7" class="">
-</p><p id="275b3473-08cf-4dd1-84a3-ea68492614c1" class=""><strong>💻 Frontend</strong></p><p id="abc3494e-9db5-416e-840b-8b05d30959eb" class="">
-</p></div><div id="5e721ab9-3708-4bbf-979a-e3d832b1bc50" style="width:81.25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="54c84f91-69b4-4085-86c5-7f6225e78217"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">- Java 8, 11
-- Spring Boot(MVC), Spring Data JPA
-- MyBatis, JPA, Junit 5</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b3c29fe8-ec99-4176-925f-21621f6a959f"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">- MySQL, Oracle
-- AWS (Elastic Beanstalk, EC2, Code Deploy, RDS, S3)</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="421af7f1-93de-4c2d-8516-b9fd2aeae13a"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">- Javascript, Angular6, jQuery</div></figure><p id="d491167d-1fd8-46e7-ae9a-b69f363e7fa8" class="">
-</p></div></div><h2 id="92cb12aa-23c8-4791-aec3-16dfd595d7f4" class="block-color-purple_background">Work Experience.</h2><div id="abcff7bb-a3c2-4720-9b20-7625a51e81f0" class="column-list"><div id="23703207-6bb1-4dd0-bdcc-314048880c73" style="width:25%" class="column"><h3 id="587cc95c-8e90-492f-9d8b-682c9b649470" class="">TRIA(트리아)</h3><p id="918581f1-cb01-49f2-9b47-ea1c1f6cff6f" class=""><a href="http://triagroup.co.kr/">http://triagroup.co.kr/</a></p><p id="4d9a4979-a56d-44e5-93eb-716f6f6c7320" class="">2019.08 ~ 2021.02</p><p id="74e44524-3d6b-4295-969f-3889779649f5" class="">
-</p></div><div id="2044016a-8e62-47fb-90d2-8229182278cb" style="width:75%" class="column"><ul id="caf4fda0-0557-4ee4-86d7-c7623464899c" class="bulleted-list"><li>신한금융투자 CRM 프로젝트 참여</li></ul><ul id="7da0a63e-dac0-4671-9ad0-b4f107e6da9b" class="bulleted-list"><li>사내 솔루션(LRM, OPEX) 파워빌더 → Web 전환 프로젝트 참여</li></ul><ul id="5f3a8036-3810-4eb9-a7ad-e3ed0de712cb" class="bulleted-list"><li>CHUBB 에이스손해보험 IFRS17 사업비 프로젝트 참여</li></ul><ul id="54ace082-3596-4256-8c3f-e896843f55e3" class="bulleted-list"><li>Spring Boot, Gradle, MyBatis, Oracle, MsSQL(Azure DW),
-Angular6, ProFrame 5 C, WebSquare5 환경에서의 개발 경험</li></ul><p id="3e0e3dbd-5e13-43ba-8fcb-da7ac4cc2757" class="">
-</p></div></div><h2 id="879280fa-4c05-4af9-8fa2-f79c33285650" class="block-color-pink_background">Projects.</h2><div id="e14610f3-1637-43c6-8557-55e613d62920" class="column-list"><div id="08b681e6-155d-41a8-9ae4-729cfb0cf6f9" style="width:31.25%" class="column"><h3 id="51a95ed8-f892-4d60-ac36-798110f8f546" class="block-color-teal">신한금융투자 CRM 프로젝트</h3><p id="c5f9587b-4346-4dee-b4fa-4f7a61c376c5" class="">2020.09.09 ~ 2021.02.26</p><figure id="bbb8bc7a-0897-4ade-91e7-cd526b2741a8" class="image"><a href="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled.png"><img style="width:240px" src="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled.png"/></a></figure></div><div id="a9c50188-d3a2-4d8a-b483-cb43682c7bfa" style="width:68.75%" class="column"><h3 id="a2a5327d-391f-4602-99fa-b56e5fb1f81b" class="">Description</h3><p id="31f07735-57b9-4e6e-a9bf-86abfde956d3" class="">신한금융투자증권 CRM(고객 관계 관리) 프로젝트</p><p id="95618210-f366-4392-b047-1c3d7e6bf6fe" class="">증권사 고객들의 정보를 관리하여 영업 인력의 영업 활동을 지원하고, 고객 서비스를 질적으로 향상시키기 위한 시스템</p><h3 id="99e5da4e-c9e2-4512-a2e7-a0a16126e8c2" class="">What did I do</h3><ul id="4dd201f8-db22-425a-a0b9-54a68ce673bc" class="bulleted-list"><li>기존의 CRM 시스템을 Web 으로 전환 작업</li></ul><ul id="11535dd7-919e-492f-ae86-a02a3eb366fd" class="bulleted-list"><li>CRM 파트 중 `고객정보(개인)`, `성과관리(개인)` 에 대한 요구사항 분석 및 개발<ul id="77923f0c-cfb1-4117-a3da-1db74e2f37ec" class="bulleted-list"><li>기존에 사용중이던 프로그램을 기반으로, <strong>실제 사용자와의 회의를 통해 추가적으로 필요한 기능을 정의</strong></li></ul><ul id="24d96d08-56e3-4935-94a8-3e282f1e49ac" class="bulleted-list"><li><strong>요구사항 기능 정의서와 화면 설계서를 작성</strong></li></ul><ul id="a8312218-de82-41a8-8c2c-7ee5c472a17d" class="bulleted-list"><li>설계 문서를 기반으로 <strong>웹 애플리케이션 개발</strong></li></ul></li></ul><ul id="775c3136-88f8-4402-bc70-68402fb09999" class="bulleted-list"><li>백엔드 개발툴로 ProFrame 을 사용하였고 <strong>Oracle DB</strong>와 연동하여 고객 정보와 고객 성과 관리에 대한 <strong>CRUD API 개발</strong></li></ul><ul id="9824ea1a-de6e-412f-92f4-33f2e6855fe4" class="bulleted-list"><li>프론트엔드 개발툴로 WebSquare를 사용하였고 화면 설계서와 동일하도록 <strong>화면 디자인과 기능을 구현</strong></li></ul><ul id="d5189558-e0d3-4937-b677-9690cf79b9e4" class="bulleted-list"><li>리포트 개발툴로 OzReport를 사용하였고 고객의 자산 정보를 출력할 수 있도록 구현</li></ul><h3 id="6d93ec0e-9ddc-4a97-8cac-5ee776573fd6" class="">Tech Stack</h3><p id="5a51a5a4-d561-47fa-8c5b-7ba22f61648c" class="">WebSquare5, ProFrame, OzReport, Oracle</p><p id="73f4bd84-6497-488e-913b-0a1fe91b5591" class="">
-</p></div></div><hr id="1f6ecc9b-8248-4636-85fb-48ce91e084b2"/><div id="f7a1a840-b5a1-4a12-abab-44bdc0aa9cd7" class="column-list"><div id="8cec7a08-26a6-4d4d-983c-d307c5137198" style="width:31.25%" class="column"><h3 id="c3344ca0-8976-43c1-aa1c-7d977eec4ae3" class="block-color-teal">TRIA <a href="http://www.triagroup.co.kr/doc/sb2_7.php#space">Amain for OPEX</a> 
-(보험사 사업비 솔루션) 개발</h3><p id="dafe9b8f-d19b-4e3c-b76b-6d8474e0e6c1" class="">2020.08.03일 ~ 2020.09.04</p><figure id="f8daafe1-c99c-4e3b-add0-329010a70b1d" class="image"><a href="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled%201.png"><img style="width:240px" src="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled%201.png"/></a></figure><p id="8c4af11f-58a3-4cf8-8a55-812a57d63bea" class="">
-</p></div><div id="5f94b166-9a6d-4482-80f0-d9cc37d1bf88" style="width:68.75%" class="column"><h3 id="83865c62-f418-46a2-a166-20a3d88d19e3" class="">Description</h3><p id="31f26d1c-9b5f-47c0-8fc7-f1e89240055a" class="">(주)트리아의 솔루션 중 하나로, IFRS17 기준에 따른 국내 보험사 사업비 배분 업무에서 사용되는 배치 애플리케이션 설정 웹 애플리케이션</p><p id="e01356a3-3edd-4b8f-932d-aca99e1a0bcc" class="">관리자(사용자)가 배치 애플리케이션에서 사용되는 데이터와 설정등을 조작하고 관리할 수 있음</p><h3 id="bd5d33cf-c8a2-4bc3-9075-48f9ad9086ad" class="">What did I do</h3><ul id="c8d5fcba-caf1-4b7b-8dd4-f1d129e9c757" class="bulleted-list"><li>본사 기존 파워빌더(PowerBuilder) 솔루션의 사업비 배분의 원장(Ledger)설정, 차원(Dimension)설정 파트를 참고하여 <strong>To-Be 화면 설계 및 로직 분석</strong></li></ul><ul id="ab37f226-a70d-4471-a482-80946b08b449" class="bulleted-list"><li>사업비 배분 시 필요한 원장(Ledger), 차원(Dimension)을 사용자가 설정할 수 있도록 화면을 설계하고 <strong>JSP 를 기반으로 화면 개발</strong></li></ul><ul id="eb9023b6-c2b9-4683-b49b-1532071d44ab" class="bulleted-list"><li>원장, 차원 기능 <strong>CRUD API 개발 (REST API)</strong></li></ul><h3 id="a1330e66-36e2-4d84-afdd-d7e76120880f" class="">Tech Stack</h3><p id="826a426d-df6b-49c0-ba40-3ad4222d65e2" class="">Spring Boot, Gradle, MyBatis, Oracle, JSP, jQuery</p><p id="c6297a43-f366-49d7-981a-131a4a7720e3" class="">
-</p></div></div><hr id="4d268e08-69bd-4787-8913-2235222cc51f"/><div id="b7f02de4-9c0f-46cb-b45b-a75df1697c37" class="column-list"><div id="e36d557e-ce0b-4c27-9a30-56d54e495582" style="width:31.25%" class="column"><h3 id="2d42ce4e-939d-42df-b2cb-172850fabc4d" class="block-color-teal">TRIA <a href="http://www.triagroup.co.kr/doc/sb2_3.php#space">Amain for LRM</a> 
-(유동성 관리 솔루션) 개발</h3><p id="a4e08cda-3111-45a0-9fd8-12dd192ca0e4" class="">2020.05.11 ~ 2020.07.31</p><figure id="63b2a34c-6906-4d72-a942-a3bb9c76378e" class="image"><a href="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled%201.png"><img style="width:240px" src="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled%201.png"/></a></figure><p id="87d92bdd-6357-4b92-b9c8-a31b17bfdaff" class="">
-</p></div><div id="43ee85df-1c96-4c45-a75b-b1b7abb49fce" style="width:68.75%" class="column"><h3 id="2ee6d247-79ac-4cc9-9655-4a4280aa4446" class="">Description</h3><p id="cbbdee7e-ae14-4f38-9cb4-fe6eaf6987aa" class="">(주)트리아의 솔루션 중 하나로, 국내 증권사의 리스크 관리 회계 업무에서 사용되는 배치 애플리케이션 설정 웹 애플리케이션</p><p id="b909dc25-00e0-42ab-afeb-39b821ce59aa" class="">관리자(사용자)가 배치 애플리케이션에서 사용되는 데이터와 설정등을 조작하고 관리할 수 있음</p><h3 id="6aeb034d-cd72-4bd0-bd60-9e3b43c1c695" class="">What did I do</h3><ul id="71104648-2071-4496-b68a-580fdd8a6442" class="bulleted-list"><li><strong>Spring Boot 프로젝트</strong>를 생성하고 <strong>기본 설정(DB 연결, 로그, 공통 클래스 개발)을 진행</strong></li></ul><ul id="cb7444c0-8509-4483-a607-9a9979744852" class="bulleted-list"><li>본사 기존 파워빌더(PowerBuilder) 솔루션의 유동성 관리 파트를 참고하여 <strong>To-Be 화면 설계 및 로직 분석</strong></li></ul><ul id="795f83f8-edee-4228-a8cb-e1f002b95e6a" class="bulleted-list"><li>배치 애플리케이션에 필요한 설정과, 프로세스를 관리할 수 있도록 화면을 설계하고 <strong>JSP 를 기반으로 화면 개발</strong></li></ul><ul id="a19e85fe-e92f-442d-922f-2995665f24e6" class="bulleted-list"><li>보고서를 출력할 수 있도록 <strong>JAVA 의 POI 라이브러리를 사용하여 엑셀 다운로드를 구현</strong><ul id="ed4656e2-50f4-4f52-8946-45c387425c27" class="bulleted-list"><li>이후 개발자들이 공통으로 사용할 수 있도록 <strong>가이드 코드 작성 및 제공</strong></li></ul></li></ul><ul id="36fc9466-90f7-4c62-8816-34a927b95e46" class="bulleted-list"><li><strong>엑셀 다운로드</strong>를 쉽게 요청할 수 있도록<strong> 공통 함수 개발</strong><ul id="bd726852-0302-4c90-a230-e9aca73f9ebc" class="bulleted-list"><li>엑셀 다운로드를 비동기로 호출하고 다운로드 상태를 알 수 있도록 XMLHttpRequest 객체를 사용하여 개발</li></ul></li></ul><ul id="84c0d2a3-0c7a-44b8-a659-caec60864b21" class="bulleted-list"><li><strong>사내 개발자들이 보다 쉽게 화면 개발을 할 수 있도록</strong> 본사의 솔루션 개발, 외부 프로젝트 개발에서 공통으로 사용할 <strong>UI 라이브러리 개발</strong><ul id="2e182b00-bffa-40f8-b840-7c71dd76d435" class="bulleted-list"><li>jQWidgets 을 기반으로 회사에서 진행하는 프로젝트의 화면에 맞춰 개발자들이 더 쉽게 사용할 수 있도록 개발</li></ul><ul id="5fcb4200-4223-4bf5-a670-70bbc8ce926c" class="bulleted-list"><li><strong>예시 사이트를 제공</strong>하고, <strong>가이드 문서 작성</strong></li></ul></li></ul><h3 id="1757e0c7-f8e1-4a77-91d6-7bbda42d2fff" class="">Tech Stack</h3><p id="b2af3c09-afdb-42ca-8993-6d91c535036c" class="">Spring Boot, Gradle, MyBatis, Oracle, JSP, jQuery</p><p id="bebd174c-d86b-46a0-a2cc-95aa6ea9d1fd" class="">
-</p></div></div><hr id="dd6a36be-5e70-4ff1-86d5-28e881df9b9b"/><div id="f7ab1cb0-1881-484c-82bb-bc2e35a8a70f" class="column-list"><div id="2e696b64-e1b7-4249-8bcf-1ecc7bac21aa" style="width:31.25%" class="column"><h3 id="1fc4de44-fe0a-4d3e-a6c7-a8f7850dc333" class="block-color-teal"><a href="https://www.chubb.com/kr-kr/">CHUBB 에이스 손해보험</a>
-IFRS17 사업비 프로젝트
-웹, 배치 개발</h3><p id="97d79efa-63aa-4644-8598-e6017b21239e" class="">2019.06.01 ~ 2020.04.30</p><figure id="a2248a6c-129d-4028-972d-90597780d0c3" class="image"><a href="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled%202.png"><img style="width:323px" src="WEB%20bbb8bc7a08974ade91e7cd526b2741a8/Untitled%202.png"/></a></figure><p id="8c77372a-057a-4d9b-a605-8a1ef581dfa5" class="">
-</p></div><div id="c724b7da-35c2-4b73-88d3-e5fd4614e15c" style="width:68.75%" class="column"><h3 id="224463d2-d322-4e9f-abdd-60e50043e204" class="">Description</h3><p id="51e220bd-61bf-4c65-912f-73bea4b9a395" class="">CHUBB 에이스 보험사에 적용한 사업비 배분 프로젝트</p><ul id="56f0f75a-df01-4f92-a8ff-625430ab56ac" class="bulleted-list"><li>IFRS17 기준에 따른 사업비 배분 업무를 진행</li></ul><p id="785b3971-4b3c-43b0-8ad6-4ede31cfc86d" class="">국내 에이스 손해보험사의 사업비 데이터를 글로벌 데이터와 IFRS17 기준에 따라 배분하는 작업을 진행</p><p id="306ea09b-75b4-4ae5-b742-af752709a964" class="">배치 애플리케이션과 관리자용 웹 애플리케이션 개발 진행</p><ul id="7ad096a1-ca4d-43e6-9138-4223a909c661" class="bulleted-list"><li>IFRS17: 2017 년 5 월 국제 회계 표준위원회 (International Accounting Standards Board)에서 발행 한 국제 재무보고 표준</li></ul><h3 id="7a0014c2-9d18-447b-980a-66c8d3e2f7af" class="">What did I do</h3><ul id="c65f8759-d2c6-4ad8-aa23-998a0d40adac" class="bulleted-list"><li>Spring Batch 를 사용하여 <strong>배치 애플리케이션 개발</strong><ul id="a2d9531a-0d97-4989-948f-68ba1b6141c1" class="bulleted-list"><li>다른 데이터베이스에 적재 되어있는 데이터중 사업비 배분에 필요한 <strong>초기 데이터 입수(ETL) 개발</strong></li></ul><ul id="8b2d9d8f-3775-42ff-ae07-9873beed4bcb" class="bulleted-list"><li>사업비 배분 프로세스가 끝나고 마지막에 실행되는<strong> 합계 배치 개발</strong></li></ul></li></ul><ul id="889db064-fe0b-4e59-9216-80378e93dacb" class="bulleted-list"><li>사업비 배분에 필요한 초기 데이터, 코드를 관리하고 배치 프로세스를 설정할 수 있는 웹 애플리케이션 개발</li></ul><ul id="a7d5f097-52d1-4606-a48f-0f82a2a3ef4a" class="bulleted-list"><li>백엔드 개발에는 <strong>Spring Boot</strong> 를 사용하였고 코드 관리, 배치 프로세스 설정, 코드 복구, 엑셀 다운로드 기능등의<strong> REST API(CRUD) 개발</strong></li></ul><ul id="f45a237c-edca-40d9-adf9-f4a20e555ff5" class="bulleted-list"><li>프론트엔드 개발에는 <strong>Angular 6 프레임워크</strong>를 사용하였고 CHUBB 글로벌 개발팀에서 제공한 <strong>CRUX UI 라이브러리로 화면 개발</strong></li></ul><ul id="9b45d128-4383-4de0-8688-cce1faee81c5" class="bulleted-list"><li><strong>Swagger</strong> 를 통해 <strong>API 명세를 관리</strong></li></ul><h3 id="8016a153-aea1-4406-8af7-ee2cddf01803" class="">Tech Stack</h3><p id="3a6aeb79-d0d3-4ac9-aa15-a434b59fdc11" class="">Spring Boot, Spring Batch, Gradle, MyBatis, MsSQL(Azure DW), Angular 6, Swagger</p><p id="7916ce51-2a23-4e47-9898-218fa62b68f3" class="">
-</p></div></div><h2 id="abfd4012-ebaa-41ae-9b11-1c5754a9cea6" class="block-color-yellow_background">Education.</h2><div id="2baf18aa-a686-4fa1-91d3-31262eb64835" class="column-list"><div id="a8d96e9d-795b-45c0-bab0-8d5f276d8204" style="width:31.25%" class="column"><h3 id="3c6bbce7-aa50-4f90-b9b9-f86528d9d4bb" class="">우아한테크캠프 pro 1기</h3><p id="61ad407f-5f14-4e90-9c54-ed926ac45e39" class="">Next Step &amp; 우아한 형제들
-2020.11 ~ 2021.01</p><p id="f92fa879-ea54-4a62-967f-ce15eaff67e9" class="">
-</p></div><div id="e23a0114-8216-4157-9256-218b9d7a5898" style="width:68.75%" class="column"><p id="3ab8ebf5-e6ad-46fd-9955-d0a4d28e3df0" class=""><strong>백엔드 개발자 교육과정</strong>에 참여하여 진행하는 모든 과제를 완료하였고, <strong>우수 수료생으로 최종 수료</strong> 하였습니다.</p><p id="7f116598-8b9d-422c-a72e-e23c53db7be8" class="">사용자용 <strong>서비스 개발을 목표로 하는 백엔드 개발자</strong>에게 필요한 역량을 학습하기 위한 과정으로 <strong>테스트코드 작성, 클린코드, 리팩터링, JPA와 연관관계에 대한 고민, 서비스 배포</strong>에 대한 전반적인 학습을 할 수 있었습니다.</p><p id="1c6a8ee9-b134-4f7c-98d0-d206884f337f" class="">해당 과정을 완료한 후 진행하는 학습 프로젝트에는 <strong>테스트코드를 필수적</strong>으로 작성하고, <strong>더 좋은 구조와 클린 코드에 대한 고민</strong>을 바탕으로 코드를 작성하는 연습을 하고 있습니다.</p><p id="91547a9d-a69f-4ff7-a482-e780e52ec68c" class="">
-</p><p id="955382c8-d429-4c5f-8989-8c6d37616ea6" class=""><a href="https://jhhj424.tistory.com/category/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EC%BA%A0%ED%94%84pro"><strong>매주 미션 정리 및 회고 블로그</strong></a><strong> ← link click</strong></p><p id="f1f06edd-564d-45de-ac0b-f77c0b23e975" class="">
-</p></div></div><hr id="809c967c-e5c6-4abc-a72a-77a9d1b23191"/><div id="a7b7a5d4-0fca-41c6-aa72-a2b2f99ea86a" class="column-list"><div id="df7f56f9-bd2a-4783-ad81-c153edf01572" style="width:31.25%" class="column"><h3 id="63373c70-aa1a-47c1-bbc8-1f4a71f051cf" class="">구디아카데미</h3><p id="2a0a28c0-ed8b-48fb-a5fc-a61b9855ba88" class="">Spring기반 빅데이터 전문가 과정</p><p id="799fb05a-2d1a-4dda-ac38-7dc05cdfca34" class="">2018.07 ~ 2019.01</p></div><div id="ba575670-0aa8-483f-8cb7-b10f0311dcfa" style="width:68.75%" class="column"><p id="85928e34-be95-4772-bce9-047450ba26bf" class="">IT 전문학원에서 6개월간 공부하며 웹 애플리케이션 개발 능력을 쌓았습니다.</p><p id="dad5e629-c6c2-4484-b0ca-1572c329c54b" class="">Java, Spring 기반의 웹 애플리케이션 개발 역량을 우선적으로 학습하고 키울 수 있었고, 최종프로젝트에서 리더 역할로 팀을 이끌어 최우수팀으로 선정되었습니다.</p><p id="94a3c867-9368-45db-90d3-b2a3d8a0e934" class="">해당 교육기관에서 쌓은 역량 덕분에 취업 후, 성공적으로 Spring 기반의 프로젝트를 완료할 수 있었습니다.</p><p id="5a785a85-5e76-4d70-b16f-2d3ecc45818e" class="">
-</p></div></div><h2 id="cbbf8d36-b968-431d-95fa-b85b7e65ce16" class="block-color-red_background">Other Experience</h2><div id="0abd8357-0f33-4e50-8df4-655685cc513f" class="column-list"><div id="16a50f44-7321-4966-9c1b-7dd53b250ee9" style="width:31.25%" class="column"><h3 id="89d8fae6-d028-4253-ac6d-f9116b7c1ede" class="">개발하는 지토</h3><p id="002c15df-7421-4898-b50c-3736e274333b" class="">2019.12.09 ~ </p><p id="b4f45c01-b794-430a-9a38-32bf4ab61f8e" class="">
-</p></div><div id="630cf969-df81-4785-9dde-92f1e40024b4" style="width:68.75%" class="column"><p id="d95321ea-e7fb-45dc-ba05-bbbad4b32f50" class="">&#x27;개발하는지토&#x27; 라는 이름의 개인 블로그를 운영중입니다.</p><p id="d2280206-4240-410a-a0ec-1f46f89702e1" class="">사용하거나 관심 있는 기술, 새롭게 배우게 된 내용 등을 글로 작성하여 공유합니다.</p><p id="8ae168fe-0ff7-4fe3-96e5-914643c5ac58" class="">발전해나가는 저에 대한 기록입니다.</p><p id="aea7467e-31f9-4b99-a41a-0f684c474a3e" class="">
-</p><p id="90714163-4f3d-4df3-bef9-5e5b96a9e24c" class=""><strong><a href="https://jhhj424.tistory.com/">블로그 주소</a></strong><strong> ← link click</strong></p><p id="718d7f0a-0fc1-4a18-b389-92d19941156a" class="">
-</p></div></div><hr id="68c49cef-1363-4f05-815d-6ff922a49a64"/><div id="f50feba4-58b3-42e6-9d2c-25cbeb8fb49b" class="column-list"><div id="7174143d-3db7-4a17-93db-4819cab3b4a5" style="width:31.25%" class="column"><h3 id="346b665e-539f-4750-8ce8-75e43512b7e7" class="">Java Mentoring</h3><p id="a3a9de8f-4fa2-4168-909d-d6a847c17b05" class="">2020.06.16 ~ 2020.07.07</p></div><div id="4c8dac8d-273c-4cfa-9666-14163fd774c4" style="width:68.75%" class="column"><p id="9497461e-ef82-4ea1-ade9-cfe81e5c8380" class="">IT 전문학원에서 공부 중인 예비 개발자분들을 위한 JAVA 멘토링을 진행하였습니다.</p><p id="ebdaf7ba-f4b7-4676-a09e-d30cd35ece74" class="">Java에 대한 기초 개념들을 다루었고, 개념 정리와 문제풀이를 진행하였습니다.</p><p id="c101ffb5-382c-4734-9341-19b98ab12dca" class="">멘티분들과 질답을 하는 과정에서 어떻게하면 더 쉽고 흥미롭게 알려줄 수 있는지를 고민하였고, 저 또한 복습을 하면서 Java의 기초 개념들도 다시 짚어볼 수 있는 좋은 시간이었습니다.</p><p id="e1920058-e57d-4f83-a04e-ace08dfcc3fe" class="">
-</p><p id="7d2dfee5-35aa-483e-abb2-75f0d5609b4a" class=""><strong><a href="https://jhhj424.tistory.com/13">2회차 멘토링 후기</a></strong><strong> ← link click</strong></p><p id="38e29fd6-465b-432e-a95a-95f355de4683" class=""><strong><a href="https://jhhj424.tistory.com/15">3회차 멘토링 후기</a></strong><strong> ← link click</strong></p><p id="b68a14d9-3f33-4bcb-a6d5-ce8fbf82ed09" class=""><strong><a href="https://jhhj424.tistory.com/17">4회차 멘토링 후기</a></strong><strong> ← link click</strong></p><p id="f3cbd9ce-9a32-4d37-b71d-25a2fcc1cc58" class="">
-</p></div></div><h2 id="53935cf8-1b6c-4827-9e01-e417e908d816" class="block-color-brown_background">Licence</h2><div id="2bc98b95-abfa-442e-8d47-3c84510280b5" class="column-list"><div id="be799837-df78-4812-87f7-994f1bcde17e" style="width:50%" class="column"><h3 id="763e7d39-fa6b-4fb4-87d5-f2294401c955" class="">SQLD(SQL 개발자)</h3><p id="875a9314-68be-4dc8-90f2-abd51d1fd3b6" class="">한국데이터베이스진흥센터</p><p id="0b17692b-c858-4d13-8169-efa20950f0cf" class="">2018.12.28</p></div><div id="33522c99-b50e-4dba-b7d0-efad19d8f56e" style="width:49.99999999999999%" class="column"><h3 id="ecf8dd46-4d32-4bf9-a76d-d520ae01f10e" class="">정보처리산업기사</h3><p id="5caebe2a-506a-4368-8f58-67ff788ffaf6" class="">한국산업인력공단</p><p id="e1e49e4c-0484-400d-8891-574e3a0f33b6" class="">2019.05.22</p><p id="493bde6d-97a5-4643-bac7-46a356570bcd" class="">
-</p></div></div><hr id="28f03f62-e8da-4c41-bdcb-5f9d49d367c9"/></div></article></body></html>
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5df1e21a-ad21-4621-9e14-6aecdf2e0893" class="page sans"><header><h1 class="page-title">신지호</h1></header><div class="page-body"><h1 id="727d8ea7-0bc5-488b-9f62-d50d7c83c302" class="block-color-blue"><strong>Contact.</strong></h1><div id="6ebf6bb1-f3e3-4dbb-b592-a8c2080ca7f3" class="column-list"><div id="7837dd0f-a00d-4a5c-a0c5-fdcb0321f8fc" style="width:12.5%" class="column"><p id="7da43a3b-7fba-4891-bcb9-dde404918419" class="">Phone.</p><p id="0f13bec4-e002-4c95-a090-70ec00cf7a68" class="">Email.</p><p id="9b6b37e8-e24c-46a8-bcd2-fd1a317791fb" class="">Github.</p><p id="e6744bee-bb75-4f3f-8945-cb1937f6f2d5" class="">Blog.</p></div><div id="70278838-c8be-4744-9222-b2e8945907f1" style="width:87.5%" class="column"><p id="21bbb98b-c3b6-4e8a-81b7-19f6fd708f35" class=""><strong>010-3412-0161</strong></p><p id="de91a1d8-2352-4fc3-8272-f5ff37bb0d68" class=""><strong>jhhj0424@gmaili.com</strong></p><p id="a11567a5-ba31-439e-a51e-8ecafa03df7c" class=""><strong><a href="https://github.com/jhhj424">https://github.com/jhhj424</a></strong></p><p id="46f22f71-a0fc-4cd4-87b5-da014a6ad12e" class=""><strong><a href="https://jhhj424.tistory.com/">https://jhhj424.tistory.com</a></strong></p><p id="f7c45942-21e2-4320-98aa-ca355c30ba91" class="">
+</p></div></div><hr id="da437532-7d00-435c-8d57-d8c265ea121f"/><h1 id="f027c981-03c8-4203-a9b5-675380001be1" class="block-color-blue">Introduce. </h1><p id="88d49284-6bc8-49d6-967c-483495c8a68d" class="">
+</p><p id="2f682086-041f-4277-a059-98ad48fff281" class="">약 2년간 Java, Spring과 Javascript 기반으로 백엔드, 프론트엔드를 경험하며 웹 애플리케이션을 개발했으며 보험사의 사업비 배분 프로젝트, 증권사의 CRM 프로젝트 경험이 있습니다.
+보험사에서 진행했던 사업비 프로젝트에서 Java 8, Spring Boot 로 개발하여 성공적으로 프로젝트를 완료 하였습니다.</p><p id="0e1afff2-1745-419b-ab89-1b758c10c6c0" class="">
+</p><p id="6ff0dccc-fefa-4962-96dc-4b78834edc97" class="">많은 사람들이 사용하고 필요로 하는 서비스를 만드는 것이 목표 입니다. 직접 개발에 참여했던 서비스를 사용하는 사람들을 통해 뿌듯함과 프로그래밍에 대한 흥미를 키워나가고 있습니다. 사용자들과 소통하고 피드백을 통해 발전하는 개발자가 되고 싶습니다.</p><p id="fd70c749-5639-46d1-b82c-a8454f4fb0a4" class="">
+</p><hr id="85cf42ed-410f-4f82-ada9-9ee508efa480"/><h1 id="6d0927d0-776a-49af-b61b-4777db3d52ef" class="block-color-blue">Skills.</h1><div id="ae0c5c23-5a3d-4817-81ce-cd7a5c478ae9" class="column-list"><div id="f65e5a15-53dc-4c3e-a5b6-9d90e4dad8d7" style="width:12.5%" class="column"><p id="dedc27b3-440d-4703-a4bd-7bcffb33521c" class=""><strong>Backend</strong></p><p id="cbc7bf5b-fb25-43ef-96f5-0354b5e0efab" class="">
+</p><p id="291ed98c-e896-4e67-a739-e0487dfff69c" class="">
+</p><p id="269465e2-783a-4cb2-9c9b-1a01d7cdd870" class="">
+</p><p id="5bc91068-c8ca-4211-9aaf-426b1afe801a" class=""><strong>DevOps</strong></p><p id="2d27f202-0684-48c9-b6c7-55a7523bc2d1" class="">
+</p><p id="a8b749d1-c244-4b20-955f-6e1ecc91ccd6" class="">
+</p><p id="18f328e8-af24-4e92-9fc0-aaad74f22b4a" class=""><strong>Frontend</strong></p></div><div id="198bd849-17f1-4ca6-b2ff-4a7e21cd4867" style="width:87.5%" class="column"><p id="32684beb-4c05-4241-b6d9-8b7d50a924e9" class="">- Java</p><p id="7533be42-0020-4426-850d-01dbfc52892b" class="">- Spring Boot(MVC), Spring Data JPA</p><p id="00db8fa5-34c9-4957-b319-c297a5db55d2" class="">- MyBatis, JPA, Junit 5</p><p id="8bce9487-26cf-478c-9d84-2d0633c3c473" class="">
+</p><p id="c2990574-9908-4de9-bf3f-0c83f316fa20" class="">- MySQL, Oracle</p><p id="0fcd127e-d0cf-4089-bfce-51245d5d7d2f" class="">- AWS (Elastic Beanstalk, EC2, Code Deploy, RDS, S3)</p><p id="875b04ac-a549-4797-a5af-8ff2ceeb0a19" class="">
+</p><p id="c3b3205c-8267-4aa8-8fa1-3ce8187d4642" class="">- Javascript, Angular 6, jQuery</p><p id="9b70c213-c41b-4231-91c0-f987d67e2390" class="">
+</p></div></div><hr id="42ba19b3-dd76-40c5-a9d8-fb8952acfb41"/><h1 id="fb84d355-f3dc-4a9b-b28b-a2b299c3b42e" class="block-color-blue">Work Experience.</h1><div id="01d4b92d-ff9f-45d7-af47-f062c6b0e2eb" class="column-list"><div id="329f8978-2215-498a-a05e-c80e45d0d0fa" style="width:18.749999999999996%" class="column"><h2 id="b41e6096-b931-48d9-9cc8-65dcc83b0ac0" class="">TRIA(트리아)</h2><p id="f72305b3-1764-4b0c-bc1a-8677351194e1" class=""><a href="http://triagroup.co.kr/">triagroup.co.kr/</a></p><p id="c27f08d8-d12f-45eb-84b0-6831b81d8376" class="">2019.08~2021.02</p><p id="19e6de1b-b27d-4624-9e15-ca0905936c78" class="">
+</p></div><div id="b86d534e-1e27-4926-a7da-0c31f7f18555" style="width:81.25%" class="column"><p id="65a5eff0-8c84-4613-971f-942b81cd2aa7" class="">회계 및 리스크관리 분야를 중심으로 금융기관에 특화된 Consulting 및 Solution 을 제공하고 
+개발을 진행하는 금융전문 솔루션/SI 회사입니다.</p><p id="8954989e-2a88-4560-a8cb-5995ac5dfc1c" class="">
+</p><hr id="aaa36818-80ff-44b0-8e4a-a54265105e77"/><h3 id="369a8522-6acd-4c93-ae24-81477a72b3e7" class="">신한금융투자 CRM 프로젝트</h3><p id="6e1f19ea-c91f-4078-bdae-403b7ae5b168" class="">2020.09.09 ~ 2021.02.26</p><p id="9e698b02-34fb-4674-9bc9-be426f114b94" class="">
+</p><p id="79b6afbf-8e89-4aed-9d3d-ba23d9ed759c" class=""><strong>Description</strong></p><p id="870574e6-690f-418c-a86f-9f5596576372" class="">증권사 고객들의 정보를 관리하여 영업 인력의 영업 활동을 지원하고, 고객 서비스를 질적으로 향상시키기 위한 CRM 시스템을 기존의 CS 프로그램 환경에서 웹 환경으로 전환 및 추가 기능 개발</p><p id="717afdca-4bd4-491f-9a9f-8c5ff8113c7a" class=""><strong>What did I do</strong></p><ul id="87df1cda-bf67-4a8e-8d13-5a632c49222c" class="bulleted-list"><li>성과관리 파트는 기존에 있던 C/S 프로그램의 API 서버 로직을 기반으로 새로운 DB 의 테이블에 맞춰서 쿼리를 변경, UI 는 기존 설계 그대로 웹으로 표현할 수 있도록 개발</li></ul><ul id="f38fc72d-ff97-4c3a-80e0-830deadaa593" class="bulleted-list"><li>고객정보 파트는 기존에 있던 C/S 프로그램의 기능 외에 추가적으로 고객들의 자산 정보 및 투자 성향을 여러 종류의 차트로 표현, 사용자 권한에 따라서 업무 결제를 할 수 있도록 개발<ul id="cf89c61e-56f2-43ab-b1c4-d64f581dd2b6" class="bulleted-list"><li>UI는 WebSquare 에서 제공하는 컴포넌트와 HTML, css 를 사용해 개발</li></ul><ul id="2890a49a-37ec-4aab-b5f1-2f3e35f92813" class="bulleted-list"><li>선택 코드, 로그인 사용자 권한에 따른 동적 기능은 Javascript 를 이용하여 개발</li></ul><ul id="7345dfdf-11d6-4cf1-918c-5d39d315f126" class="bulleted-list"><li>WebSquare 에서 제공하는 차트 컴포넌트를 사용하여 여러 형태의 차트(막대, 원형, 선)를 표현, 이때 차트 컴포넌트에 바인딩 할 데이터는 API 서버에 요청한 데이터를 Javascript 를 이용하여 각각의 차트 컴포넌트에 맞춘 구조로 데이터 바인딩</li></ul><ul id="f919a653-2a91-4b70-b8a8-16fdb6dc935e" class="bulleted-list"><li>기존 기능은 ProFrame 을 통해 기존에 있던 로직을 기반으로 하여 변경된 DB 의 테이블에 접근할 수 있도록 쿼리를 새로 작성하여 API 서버 개발</li></ul><ul id="9911f40c-519d-4a49-ac7a-708c9d8ef13e" class="bulleted-list"><li>신규 기능의 경우 ProFrame 에서 기존에 사용하던 모듈을 활용하거나 새로운 모듈을 추가하고 Input, Output 파라미터를 설정, Input 값에 대한 유효성 검증을 하고 Input 을 조건으로 CRUD 하는 쿼리를 작성하여 DB 에 Access 하도록 개발</li></ul><ul id="f64c7449-dfbf-49c7-a2e1-c67248ae833b" class="bulleted-list"><li>실시간으로 변동되는 주식 및 금융상품 현황 데이터는 기존에 증권사에서 사용하는 실시간 금융상품 현황 데이터 API 를 호출하여 사용</li></ul><ul id="5fdbbee8-8e45-40bb-bafd-1b6823820811" class="bulleted-list"><li>기본적으로 API 호출은 비동기 방식으로 요청하지만, A 요청의 응답 데이터가 B 요청에 필요할 경우 콜백 함수를 통해 함수 호출 순서를 정의하여 동기 방식 처럼 개발</li></ul></li></ul><ul id="3c9fcb5a-153e-41c9-bd80-a0ff2cd69a24" class="bulleted-list"><li>OzReport 를 사용하여 고객의 전체 자산 보유 상세 현황에 대한 보고서를 개발<ul id="f9b08d4f-fa24-49dd-8ba2-349010108978" class="bulleted-list"><li>고객정보 파트에서 ProFrame 으로 신규 개발한 API 를 사용</li></ul><ul id="8d84a6c9-9111-47c9-a538-c73e6b06c14c" class="bulleted-list"><li>OzReport 의 테이블 컴포넌트로 Report 를 그리고 항목에 맞춰서 데이터 바인딩</li></ul><ul id="cd1e8ce7-3426-4428-b992-6a4afdd51d95" class="bulleted-list"><li>Front 단에서 API 서버에 요청하고 받은 데이터를 리포트의 각 항목에 맞도록 Javascript 를 사용하여 가공하고, JSON 포맷으로 변환하여 OzReport API 를 통해 POST 방식으로 요청</li></ul><ul id="d8d2fd90-a9b1-4c88-a8a8-4f9f417c001b" class="bulleted-list"><li>OzReport Viewer 가 Open 되고 응답으로 받은 JSON 데이터를 바인딩 된 항목의 Key 값에 따라 출력</li></ul></li></ul><p id="4e83f1f5-b0f2-426c-86e0-101ea00d1dcc" class=""><strong>Tech Stack</strong></p><p id="25fa8396-3268-4e81-a7bf-5e2ff8eb92b2" class="">WebSquare5, ProFrame, OzReport, Oracle</p><p id="a8bbea5b-5438-44d5-8510-2db99f5cca29" class="">
+</p><hr id="82d2bb78-e897-4feb-946d-2dd1b2e8e06b"/><h3 id="266d4fbf-b376-40ba-82bf-2f6cbfe0ea10" class="">TRIA 솔루션(<a href="http://www.triagroup.co.kr/doc/sb2_3.php#space">LRM</a>, <a href="http://www.triagroup.co.kr/doc/sb2_7.php#space">OPEX</a>) 개발</h3><p id="9128eccf-e519-44db-82ea-c81675d6a443" class="">2020.05.11 ~ 2020.09.04</p><p id="546b79e5-170d-4791-9495-9684280bf8ef" class="">
+</p><p id="683bbd22-f883-4a1f-b207-02081b118e13" class=""><strong>Description</strong></p><p id="13237dd8-683d-489a-86ab-c1ca204a1c90" class=""><span style="border-bottom:0.05em solid">LRM</span> : 국내 증권사의 리스크 관리 회계 업무에서 사용 되는 코드 데이터와 배치 프로그램 설정을 사용자가 쉽게 조작하기 위한 웹 애플리케이션</p><p id="10dc3c8c-4ff6-417e-b5bc-01cae9aaa146" class=""><span style="border-bottom:0.05em solid">OPEX</span> : IFRS17 기준에 따른 국내 보험사 사업비 배분 업무에서 사용 되는 코드 데이터와 배치 프로그램 설정을 사용자가 쉽게 조작하기 위한 웹 애플리케이션</p><p id="bddf0c14-6009-44fd-a393-180f6ec29317" class="">
+</p><p id="ea2f4dc1-66f5-4585-99d7-03a3063fda1d" class=""><strong>What did I do</strong></p><ul id="46b72ea8-0d81-4d6a-a137-575ce05b0ace" class="bulleted-list"><li>Amain LRM, OPEX 프로젝트를 생성하기위해 Spring Boot 프로젝트를 생성<ul id="ae8152c4-4ad1-4048-b282-11cade3ca4d0" class="bulleted-list"><li>application.properties(port, jsp path, database , session timeout, log .. 등) 개발, 운영 환경 분리하여 설정</li></ul><ul id="c8f0ed8d-0f5d-442d-ba77-8a9cfe566b92" class="bulleted-list"><li>build.gradle 을 통해 라이브러리 의존성 설정 (log4j, mybatis, poi, swagger .. 등)</li></ul><ul id="76d24382-dd8e-46d6-a71b-2eac15250989" class="bulleted-list"><li>Mybatis 설정 (datasource, mapper path, alias .. 등)</li></ul><ul id="833cc8bf-3e2a-4432-8418-699c6dfb6c55" class="bulleted-list"><li>API, View Exception 에 따라 ExceptionHandler 정의</li></ul><ul id="7de7bedc-256d-4ab1-a95b-d2d55fc18776" class="bulleted-list"><li>Request, Response 공통 클래스 개발</li></ul></li></ul><ul id="b53cc6a5-c69d-4b5f-a4fc-7912c9a1a354" class="bulleted-list"><li>배치 애플리케이션에 필요한 설정과, 프로세스 룰을 관리하는 화면을 개발<ul id="958fa6e8-af23-4e40-934b-91f0ac02b2f9" class="bulleted-list"><li>JSP 를 기반으로 HTML, css 를 작성하고 동적 기능은 jQuery 를 사용하여 개발함</li></ul></li></ul><ul id="11fe4139-9631-4843-b813-1c18af8facd7" class="bulleted-list"><li>원장, 차원, 사용자 코드를 설정할 수 있는 CRUD API 를 개발<ul id="ac3986ac-d24e-4503-ad60-f0d57f1498fb" class="bulleted-list"><li>Rest Controller, View Controller 를 분리하고 Rest Controller 는 공통으로 정의한 Response 클래스로 응답하도록 개발</li></ul><ul id="60f3d0f3-d623-413b-891f-141e99d0d88c" class="bulleted-list"><li>Rest Controller 는 REST API 설계 원칙을 기반으로 개발</li></ul><ul id="bd280c83-eb5c-4360-9845-b4447c96feb6" class="bulleted-list"><li>Controller - Service - DAO - Mapper 구조에서 Mybatis를 통해 Mapper 에 정의한 쿼리로 DB에 Access 하도록 개발</li></ul></li></ul><ul id="a0817e45-9a37-40c6-885d-6c4c86621953" class="bulleted-list"><li>보고서를 출력할 수 있도록 엑셀 다운로드를 개발<ul id="9b20571b-9ad0-4d72-81ef-a9c7c8ae0834" class="bulleted-list"><li> JAVA 의 POI 라이브러리를 사용하였고, 보고서 마다 템플릿 파일을 미리 생성해두고 데이터를 삽입하는 방식으로 구현</li></ul><ul id="c949abc6-e94b-420c-96df-74e7b27dfd38" class="bulleted-list"><li>POI 의 SXSSF 방식을 사용하여 1만 row가 넘는 데이터도 Out Of Memory에러 없이 다운로드 할 수 있도록 구현</li></ul><ul id="b2145f51-74ed-4be8-a8fe-31641322bdb0" class="bulleted-list"><li>엑셀 다운로드를 비동기로 호출하고 다운로드 진행 상태를 알 수 있도록  XMLHttpRequest 객체를 사용하여 공통 호출 함수 개발</li></ul><ul id="6deb6e38-f36d-4a42-81fe-e292d7e4c64e" class="bulleted-list"><li>사내 개발자들이 공통으로 사용할 수 있도록 가이드 코드 작성</li></ul></li></ul><ul id="e6c4d135-11b4-4edb-8e71-64a93143c778" class="bulleted-list"><li>사내 개발자들이 더 쉽게 솔루션의 화면 개발을 할 수 있도록 공통 UI 라이브러리 개발<ul id="a2a8efb9-70f7-4b6c-9ef8-753b8cf2b4d6" class="bulleted-list"><li>jQWidgets 을 기반으로 사내에서 진행하는 프로젝트의 화면에 맞춰 더 쉽게 사용할 수 있도록 개발</li></ul><ul id="64ce7ea7-faec-46fc-a435-90209c0132e7" class="bulleted-list"><li>기존에 구현 되어있는 기능을 한단계 더 모듈화해서 더 쉽게 사용할 수 있도록 함</li></ul><ul id="233dea57-aeaa-4dc1-9b82-114142a29113" class="bulleted-list"><li>레이아웃 컴포넌트는 여러개의 샘플 컴포넌트를 가이드 하여 공통으로 쉽게 레이아웃을 잡을 수 있도록 개발</li></ul><ul id="fbfc4715-9d02-4b0f-9302-36961ecbafcc" class="bulleted-list"><li>각 컴포넌트의 예시(UI, code) 사이트를 제공하고, 가이드 문서 작성</li></ul></li></ul><p id="22f9675d-bf6d-40c5-a148-e5894e8417a6" class=""><strong>Tech Stack</strong></p><p id="f85b5da0-2321-474a-b889-b2f3cc0f6e30" class="">Spring Boot, Gradle, MyBatis, Oracle, JSP, jQuery</p><p id="2ebe244e-96ea-455f-8cc9-f7b6c6b2bbff" class="">
+</p><hr id="6a5d41ae-fd48-49d4-a825-68dda6a16fbe"/><h3 id="34f7006d-ce6a-4f4f-970d-634209fddadf" class=""><a href="https://www.chubb.com/kr-kr/">CHUBB 에이스 손해보험</a> IFRS17 사업비 프로젝트</h3><p id="4741cbac-d394-4804-a6f2-26be6c62aa00" class="">2019.06.01 ~ 2020.04.30</p><p id="9390037b-098c-4473-aaf4-ff9712c08c71" class="">
+</p><p id="a6b02bb8-1008-47c1-b723-cfdfc187404a" class=""><strong>Description</strong></p><p id="8e1d9bc6-3067-4bef-99ad-1710af16b283" class="">CHUBB 에이스 보험사의 사업비 배분 프로젝트로 국내 사업비 데이터를 글로벌 데이터 *IFRS17 기준에 따라 배분 하는 시스템<div class="indented"><p id="db3f0718-6aa7-4025-83c1-89866c3f8d32" class="">* IFRS17 : 2017 년 5 월 국제 회계 표준위원회에서 발행 한 국제 재무보고 표준</p></div></p><p id="02c8ac9b-1d68-4dc9-9e37-361d2530fb5a" class="">What did I do</p><ul id="dab6fa17-b65f-49d4-befd-e9125f1a5073" class="bulleted-list"><li>Spring Batch 를 사용하여 배치 애플리케이션 개발<ul id="a928e478-92bd-4a63-9f5e-c516c171d317" class="bulleted-list"><li>기간계 배치를 통해 처리 된 데이터중 사업비 배분 프로세스에 필요한 데이터(거래, 집계, 조직, 계정등..)를 기존에 적재된 데이터와 비교해서 신규 또는 변경 된 데이터일 경우 정보계 DB 에 적재하는 ETL 배치 프로그램 개발</li></ul><ul id="b2832993-ab88-4ed7-a31d-1c2b791db0de" class="bulleted-list"><li>사업비 배분 프로세스가 끝나고 최종 데이터가 적재 된 테이블에서 여러개의 기준(조직, 계정, 사업비 유형 .. 등)에 따라 금액 집계를 수행하는 쿼리를 작성하고 집계된 데이터를 각 기준 별 집계 테이블에 적재하는 배치 개발</li></ul></li></ul><ul id="983bb645-975a-476a-8ac2-9698950ff9f6" class="bulleted-list"><li>사업비 배분에 필요한 초기 설정 데이터를 관리하고 배치 룰을 설정하는 웹 애플리케이션 개발<ul id="dc21f04f-25e4-4764-9fd6-a297ebb5eda2" class="bulleted-list"><li>프론트엔드(view)는 Angular 6 Framework 를 사용하여 SPA 개발<ul id="daea4fea-57f0-40cc-8510-ded32ec7e6db" class="bulleted-list"><li>CHUBB 글로벌 개발팀에서 제공한 CRUX UI 라이브러리(HTML, css 가 공통 가이드로 적용된 컴포넌트 라이브러리)로 UI 개발</li></ul><ul id="e01e4afc-30fc-4d35-adb1-72452c0f011f" class="bulleted-list"><li>API 서버에서 응답하는 객체와 동일한 구조의 클래스를 정의해서 데이터를 받을 수 있도록 하였고, 양방향 바인딩을 통해 동적 데이터 핸들링을 보다 쉽게 처리</li></ul><ul id="f22a1e45-c713-4688-a0ba-858e8e7d3f72" class="bulleted-list"><li>SPA 개발을 위한 Framework 이기 때문에 페이지 전환이 빠르고, TypeScript 를 사용하여 동적으로 타입을 검사하는 Javascript 에 비해 사소한 오류를 런타임 이전에 찾을 수 있는 장점이 있었음</li></ul></li></ul><ul id="33776921-a116-43fd-b028-ac17d2a4d3c7" class="bulleted-list"><li>코드 값 관리, 코드 백업 및 복구, 배치 룰 설정등을 처리하는 CRUD API 는 REST API 설계 원칙을 기반으로 하고, Controller - Service - DAO - Mapper 구조에서  Mybatis를 통해 Mapper 에 정의한 쿼리로 DB에 Access 하도록 개발</li></ul><ul id="ec11b490-2ffc-418e-a2e7-83e8e9db8b68" class="bulleted-list"><li>개발중 Angular 와 Spring boot 각각의 서버가 실행되는 구조였기 때문에 초기 개발 단계에서 CORS 에러가 발생하게 되었고, 이를 해결하기 위해 Spring boot 프로젝트에서 WebMvcConfigurer 을 상속받는 WebConfig 클래스를 정의하고 addCorsMappings 메소드를 오버라이딩 하여 global path 를 설정</li></ul></li></ul><ul id="cd5f1b87-fe12-4f00-815c-b43bd014a5de" class="bulleted-list"><li>Swagger 를 통해 API 명세를 관리</li></ul><p id="455e9043-0f14-44e7-969b-0b76bbbeb10c" class="">Tech Stack</p><p id="cdedeffa-11a3-419c-8d15-9d9354f7c958" class="">Spring Boot, Spring Batch, Gradle, MyBatis, MsSQL(Azure DW), Angular 6, Swagger</p><p id="36b81850-1a0d-4445-a8a5-3f5e0b8a52aa" class="">
+</p></div></div><hr id="a9fbcbdb-a749-43cb-ba71-192362411490"/><h1 id="c4a256ca-7eb8-4c0a-b0ec-72c0d2717ce8" class="block-color-blue">Education.</h1><div id="977df2a5-f261-40aa-8cf7-4c01b821cfb2" class="column-list"><div id="2f5788da-4c79-4867-b2ae-de478133ee7c" style="width:25%" class="column"><h3 id="c3b073ad-faf8-4897-a810-ff634faf1ea2" class="">우아한테크캠프Pro 1기</h3><p id="fe8a2f25-cc72-4f2f-a4e1-39691787ab39" class="">Next Step &amp; 우아한 형제들
+2020.11 ~ 2021.01</p><p id="9a93b9ab-ad99-4920-a5e8-e8b7476c6ab9" class="">
+</p></div><div id="219aaaf5-2dd7-43f8-a42f-7ca7734308d4" style="width:75%" class="column"><p id="1a5772c2-64d9-42d5-898c-fbefb181aa3d" class="">백엔드 경력 개발자를 대상으로, 서비스 개발에 필요한 역량을 학습하기 위한 과정입니다.</p><p id="099b5651-665a-450f-addf-e7fc5aa544a0" class="">TDD, 클린코드, 리팩토링, JPA와 연관관계에 대한 고민, 서비스 배포 등 사용자용 서비스 개발에 필요한 전반적인 학습을 하였습니다.</p><p id="89647304-0451-4ad9-8d70-96ecc9ad5077" class="">
+</p><p id="ed06a60a-d98e-438b-bdb8-46ef85f82a1a" class=""><a href="https://jhhj424.tistory.com/category/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EC%BA%A0%ED%94%84pro">매주 미션 정리 및 회고</a> ← link click</p><p id="42ccf3ed-5e73-466d-a455-209073a641b1" class="">
+</p></div></div><hr id="c88b0140-608b-4261-a105-bbcdaf415afa"/><div id="9d61cc50-28f9-408d-b13b-89a91ce10766" class="column-list"><div id="7f5b5550-a8cd-458e-bcfb-29ccd24674f3" style="width:25%" class="column"><h3 id="5cbd4141-f18b-4bdb-8b59-278ffb5d3d3a" class="">구디아카데미</h3><p id="c3b1915f-83a4-4793-93c6-dcf7ba930b84" class="">Java, Spring 개발자 과정</p><p id="47fadc70-87c2-4970-8f92-0e557248c09b" class="">2018.07 ~ 2019.01</p></div><div id="5a970a42-128a-4cb6-abcc-e4c7b542532b" style="width:75%" class="column"><p id="8cadb68c-c9f8-4b79-9521-f5da6d987639" class="">Java, Spring 기반의 웹 애플리케이션 개발을 위한 전반적인 학습을 진행하였고, 
+웹 애플리케이션을 직접 여러번 만들어보며 실무 개발 능력을 키울 수 있었습니다.</p><p id="574441ef-548e-44b5-a886-63aef0dfed31" class="">해당 교육기관에서 쌓은 역량 덕분에 취업 후, Spring 기반의 프로젝트를 성공적으로 
+완료하였습니다.</p><p id="701a871a-0f67-4705-abb4-917a7bec0d54" class="">
+</p></div></div><hr id="75b8eac5-c170-4031-b3fa-e52d465f12fc"/><div id="a018d862-7267-446e-a5cd-35249490a66d" class="column-list"><div id="9eb29607-3d36-4f97-b0f6-617824d81675" style="width:25%" class="column"><h3 id="7dadb2c7-8728-4f52-9adb-c49d36a8993c" class="">두원공과대학교</h3><p id="f642c9cd-3a90-4a7e-8c2d-d8e17e2bb023" class="">2015.03 ~ 2019.02</p></div><div id="b6953d5d-275b-4e47-a1ae-3c0d861904be" style="width:75%" class="column"><p id="d7a4608d-fb04-4a43-9e15-6143ac2eddc2" class="">컴퓨터 공학과를 졸업했으며, 전공 지식(네트워크, 운영체제, 데이터베이스 등)을 공부하며 프로그래밍 역량을 쌓았습니다.</p><p id="75e24e88-c2f8-49e6-aa2f-69562a45a8ad" class="">대학교 과정중 처음으로 직접 애플리케이션을 만들었을때, 개발하는 과정이 너무 재밌었고 완성 했을때 느꼈던 성취감 덕분에 개발자가 되기로 결심하게 되었습니다.</p><p id="23284207-ae53-4750-97c2-c7026462d3e6" class="">
+</p></div></div><hr id="b592ec7a-5529-41bc-bb12-dae6367a40c9"/><h1 id="4caa06af-ad6e-4261-9508-07e89c0ac4c2" class="block-color-blue">Other Experience.</h1><div id="1e7bfc7f-1783-4a9d-8a54-882b3f4b3c73" class="column-list"><div id="a2b74946-4bc7-449f-a359-a80cfe6f6ae9" style="width:25%" class="column"><h3 id="ae6ab584-1ee2-44d8-9621-8ef8600e4dfa" class="">개발하는 지토</h3><p id="958bc14c-86cd-477e-953c-e842fc2c3956" class="">2019.12.09 ~ </p><p id="f41afbd5-389d-4860-ab0c-9e71bca243da" class="">
+</p></div><div id="ae8bc03c-fdde-4d7d-8f5a-5e316e869031" style="width:75%" class="column"><p id="957edec0-29fd-4f65-8181-951f7cd4b40f" class="">&#x27;개발하는지토&#x27; 라는 이름의 개인 블로그를 운영중입니다.</p><p id="9cee97dc-7cf9-4b84-af45-7f429fd9a29b" class="">사용하거나 관심 있는 기술, 새롭게 배우게 된 내용 등을 글로 작성하여 공유합니다.</p><p id="19cbeb1b-057a-482e-91b6-438f0aaedc1e" class="">발전해나가는 저에 대한 기록입니다.</p><p id="06ea8a33-afb6-49df-bb43-3bb052235d5e" class="">
+</p><p id="65b29d92-ccb3-48d9-8cd9-162e93c70b7f" class=""><a href="https://jhhj424.tistory.com/">블로그</a> ← link click</p><p id="164a9497-ead6-4c31-b629-c498ed4fc4c5" class="">
+</p></div></div><hr id="72d5099c-9a65-42cd-883b-bfee5e449984"/><div id="e80f88fa-9a12-4281-9864-3e139b3c6162" class="column-list"><div id="9f8dd3bf-455e-4019-a08c-e64e30ce0dbb" style="width:25%" class="column"><h3 id="0b658476-7d00-41a3-a1c0-ce128d9b5cd4" class="">Java 멘토링</h3><p id="b509cd32-eded-420e-b852-bf3960d4de32" class="">2020.06.16 ~ 2020.07.07</p><p id="c6ae2a69-a1ff-45fb-8925-ec398c68460a" class="">
+</p></div><div id="2bec8960-bf15-4948-b85c-703210ebbd31" style="width:75%" class="column"><p id="c8b743a6-0ec2-4394-a9e2-a9dbad85d8c9" class="">IT 전문학원에서 공부 중인 예비 개발자들을 위한 JAVA 멘토링을 진행하였습니다.</p><p id="46ef6eec-699b-45a0-ae7b-e7e2889c73e6" class="">멘티분들과 질답을 하는 과정에서 더 쉽고 흥미롭게 알려줄 수 있는 방법을 고민 하였고, 저 또한 복습을 하면서 Java 의 기본 개념들도 다시 짚어볼 수 있는 좋은 경험이었습니다.</p><p id="3462ed77-5d28-48db-9260-d5654a3f8829" class="">
+</p><p id="196a08dd-9380-4495-a80c-26518399eb55" class=""><a href="https://jhhj424.tistory.com/13">2회차 멘토링 후기</a> ← link click</p><p id="a4b191e1-4da2-4d87-9763-d9c2af10f53a" class=""><a href="https://jhhj424.tistory.com/15">3회차 멘토링 후기</a> ← link click</p><p id="48712690-4da6-4730-8350-e953abbc32e1" class=""><a href="https://jhhj424.tistory.com/17">4회차 멘토링 후기</a> ← link click</p><p id="aefdb24a-798e-40d3-b284-2ccc76d97618" class="">
+</p></div></div><hr id="ea7a7863-b6e1-40dd-9021-dbe6ed0d6ef3"/><h1 id="572f7400-6146-4db2-929b-d948a1430249" class="block-color-blue">Licence.</h1><div id="a3b0ce59-c478-4a48-b7a8-e031299ce3a7" class="column-list"><div id="20ad49c4-7494-421b-9f3c-0f9310ddb824" style="width:50%" class="column"><h3 id="fca842d6-5fd6-45c5-8c07-efb3533ce137" class="">SQLD(SQL 개발자)</h3><p id="53eb1836-0043-4f49-a73b-ea9d1b9d3cd0" class="">한국데이터베이스진흥센터</p><p id="9be63f03-41ab-4b97-9e2b-0828d5974733" class="">2018.12.28</p></div><div id="a0e7bfbd-b70f-4109-8881-9008e0093012" style="width:49.99999999999999%" class="column"><h3 id="74a207b6-6018-4ada-9e5f-3df97997c111" class="">정보처리산업기사</h3><p id="db6c65b0-25fd-46d9-bd05-906c9fffa27f" class="">한국산업인력공단</p><p id="c9e4d8d7-73ed-40e4-88de-f79e7d701c4c" class="">2019.05.22</p><p id="babedee3-7399-4be0-91e6-d5b366f7c358" class="">
+</p></div></div><p id="ede3acf7-0aae-4e47-82dd-6146fd5a72e7" class="">
+</p></div></article></body></html>
